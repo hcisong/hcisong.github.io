@@ -5200,12 +5200,33 @@ text {
   padding: 5px;
   font-family: "Open Sans", Helvetica, Arial, sans-serif; }
 
+.fp-tableCell {
+  padding-top: 5%;
+  vertical-align: top; }
+
 .fp-slides {
-  height: 50%; }
+  min-height: 400px;
+  height: 70%; }
+
+.fp-controlArrow {
+  top: 35%; }
+
+.highcharts-title {
+  color: #fff;
+  fill: #fff;
+  font-size: 20px; }
 
 #firstPage {
   background: transparent url("../img/section_bg_1.jpg") left top no-repeat;
   background-size: 100% auto; }
+  #firstPage .firstPage_content {
+    padding: 50px;
+    height: 30%;
+    text-align: center;
+    color: #fff;
+    background: #0E0E0E; }
+    #firstPage .firstPage_content h1 {
+      letter-spacing: 1.2px; }
 
 #firstPage {
   height: 100%; }

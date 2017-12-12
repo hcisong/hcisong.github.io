@@ -28,10 +28,10 @@ Highcharts.theme = {
    },
    title: {
       style: {
-         fontSize: '16px',
+         fontSize: '20px',
          fontWeight: 'bold',
          textTransform: 'uppercase'
-      }
+             }
    },
    tooltip: {
       borderWidth: 0,

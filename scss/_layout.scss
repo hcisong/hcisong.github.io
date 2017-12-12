@@ -89,7 +89,6 @@ p, a {
       &:hover {
         color: #000;
       }
-
     }
   }
 }
@@ -109,14 +108,14 @@ svg {
 }
 
 #chart {
-width: 820px;
-//height: 700px;
-background: #bbb;
-margin: 1px auto;
-position: relative;
-	  -webkit-box-sizing: border-box;
-	  -moz-box-sizing: border-box;
-	  box-sizing: border-box;
+  width: 820px;
+  //height: 700px;
+  background: #bbb;
+  margin: 1px auto;
+  position: relative;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 text {
@@ -133,7 +132,7 @@ text {
 
 .textdiv { /* text in the boxes */
 	font-size: x-small;
-padding: 5px;
+  padding: 5px;
 	 font-family: "Open Sans", Helvetica, Arial, sans-serif;
 }
 //
@@ -146,8 +145,14 @@ padding: 5px;
 
 }
 
+.fp-tableCell {
+  padding-top: 5%;
+  vertical-align: top;
+}
+
 .fp-slides {
-  height: 50%;
+  min-height: 400px;
+  height: 70%;
 
   //.slide {
   //  position: absolute;
@@ -160,6 +165,17 @@ padding: 5px;
   //}
 
 
+
+}
+
+.fp-controlArrow {
+  top: 35%;
+}
+
+.highcharts-title {
+  color: #fff;
+  fill: #fff;
+  font-size: 20px;
 }
 
 
@@ -170,6 +186,18 @@ padding: 5px;
 
   .highcharts-background {
     //fill:  #212121;
+  }
+
+  .firstPage_content {
+    padding: 50px;
+    height: 30%;
+    text-align: center;
+    color: #fff;
+    background: #0E0E0E;
+
+    h1 {
+      letter-spacing: 1.2px;
+    }
   }
 }
 
