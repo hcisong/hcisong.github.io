@@ -1,0 +1,31 @@
+//color
+$color-red: #D42A19;
+$color-pink: #CF6363;
+$color-orange: #D99157;
+$color-yellow: #DBBE56;
+$color-green: #8fd3f4;
+$color-blue: #2DD7FB;
+$color-bg: #dfe9f3;
+$color-bg-visualisation: #041f30;
+
+$color-dark-gray: #999999;
+$color-light-gray: #E9E9E9;
+$color-dark-black: #212121;
+$color-light-black: #3F3F3F;
+$color-white: #FFFFFF;
+$color-dark-white: #F2F2F2;
+$color-text: #163549;
+
+
+$base-bg-color: $color-dark-white;
+$second-bg-color: $color-light-black;
+
+//font
+
+@mixin headline-font-family {
+  font-family: 'Prata', serif;
+}
+
+@mixin text-font-family {
+  font-family: 'Ubuntu', sans-serif;
+}
