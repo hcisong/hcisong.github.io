@@ -25,16 +25,68 @@ Highcharts.chart('line_basic', {
   credits: {
     enabled: false
   },
-  // xAxis: {
-  //     type: 'datetime'
-  // },
-  plotOptions: {
-    series: {
-      label: {
-        connectorAllowed: false
-      },
-      pointStart: 2012
-    }
+  xAxis: {
+categories: [
+  'Jan 2012',
+  'Feb 2012',
+  'Mar 2012',
+  'Apr 2012',
+  'May 2012',
+  'Jun 2012',
+  'Jul 2012',
+  'Aug 2012',
+  'Sep 2012',
+  'Oct 2012',
+  'Nov 2012',
+  'Dec 2012',
+  'Jan 2013',
+  'Feb 2013',
+  'Mar 2013',
+  'Apr 2013',
+  'May 2013',
+  'Jun 2013',
+  'Jul 2013',
+  'Aug 2013',
+  'Sep 2013',
+  'Oct 2013',
+  'Nov 2013',
+  'Dec 2013',
+  'Jan 2014',
+  'Feb 2014',
+  'Mar 2014',
+  'Apr 2014',
+  'May 2014',
+  'Jun 2014',
+  'Jul 2014',
+  'Aug 2014',
+  'Sep 2014',
+  'Oct 2014',
+  'Nov 2014',
+  'Dec 2014',
+  'Jan 2015',
+  'Feb 2015',
+  'Mar 2015',
+  'Apr 2015',
+  'May 2015',
+  'Jun 2015',
+  'Jul 2015',
+  'Aug 2015',
+  'Sep 2015',
+  'Oct 2015',
+  'Nov 2015',
+  'Dec 2015',
+  'Jan 2016',
+  'Feb 2016',
+  'Mar 2016',
+  'Apr 2016',
+  'May 2016',
+  'Jun 2016',
+  'Jul 2016',
+  'Aug 2016',
+  'Sep 2016',
+  'Oct 2016',
+  'Nov 2016',
+  'Dec 2016']
   },
   series: [
     {
@@ -100,7 +152,8 @@ Highcharts.chart('line_basic', {
         26406,
         14263,
         15383
-      ]
+      ],
+      visible: false
     },{
       name: 'Schackgalerie',
       data: [
@@ -164,7 +217,8 @@ Highcharts.chart('line_basic', {
         1154,
         1277,
         1017
-      ]
+      ],
+      visible: false
     },{
       name: 'Pinakothek der Moderne',
       data: [
@@ -420,7 +474,8 @@ Highcharts.chart('line_basic', {
        9509,
        7713,
        6180
-     ]
+     ],
+     visible: false
     },{
      name: 'Münchner Stadtmuseum',
      data: [
@@ -484,7 +539,8 @@ Highcharts.chart('line_basic', {
        17388,
        21139,
        11252
-     ]
+     ],
+     visible: false
     },{
      name: 'Deutsches Museum - Verkehrszentrum',
      data: [
@@ -548,7 +604,8 @@ Highcharts.chart('line_basic', {
        11978,
        10403,
        8199
-     ]
+     ],
+     visible: false
     },{
      name: 'Deutsches Museum - Museumsinsel',
      data: [
@@ -676,7 +733,8 @@ Highcharts.chart('line_basic', {
        7186,
        6770,
        12017
-     ]
+     ],
+     visible: false
     },{
      name: 'Alte Pinakothek',
      data: [

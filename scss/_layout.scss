@@ -196,7 +196,7 @@ text {
     background: #0E0E0E;
 
     h1 {
-      letter-spacing: 1.2px;
+      letter-spacing: 1.5px;
     }
   }
 }
@@ -214,5 +214,26 @@ text {
   .secondPage_content {
     @include make-md-column(12);
     margin-top: 60px;
+  }
+}
+
+#impress {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 70px;
+  line-height: 25px;
+  padding: 10px;
+  text-align: center;
+  background: #0E0E0E;
+  color: #fff;
+
+  a {
+    color: #fff;
+
+    &:hover {
+      color: #fff;
+      decoration: underline;
+    }
   }
 }
