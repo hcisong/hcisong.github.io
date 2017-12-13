@@ -205,5 +205,8 @@ Highcharts.chart('tree_chart_3', {
   ],
   title: {
     text: '2014'
+  },
+  credits: {
+      enabled: false
   }
 });
