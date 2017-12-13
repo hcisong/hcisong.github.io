@@ -141,9 +141,9 @@ text {
 //}
 
 .tree_chart {
-  //background: none;
-
+  // background: rgba(255,255,255, 0.7);
 }
+
 
 .fp-tableCell {
   padding-top: 5%;
@@ -181,7 +181,7 @@ text {
 
 #firstPage {
   //background: #212121;
-  background: transparent url('../img/section_bg_1.jpg') left top no-repeat;
+  background: transparent url('../img/section_bg_1.jpg') left center no-repeat;
   background-size: 100% auto;
 
   .highcharts-background {
@@ -203,4 +203,16 @@ text {
 
 #firstPage {
   height: 100%;
+}
+
+#secondPage {
+  padding-top: 20px;
+
+  #line_basic {
+    @include make-md-column(12);
+  }
+  .secondPage_content {
+    @include make-md-column(12);
+    margin-top: 60px;
+  }
 }

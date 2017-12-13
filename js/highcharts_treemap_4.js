@@ -25,44 +25,44 @@ Highcharts.chart('tree_chart_4', {
         {
           name: 'Städtische Galerie im Lenbachhaus',
           id: 'A',
-          color: '#058DC7'
+          color: '#969597'
         }, {
           name: 'Schackgalerie',
           id: 'B',
-          color: '#50B432'
+          color: '#D5AEB7'
         }, {
           name: 'Pinakothek der Moderne',
           id: 'C',
-          color: '#ED561B'
+          color: '#CCCED7'
         }, {
           name: 'Neue Pinakothek',
           id: 'D',
-          color: '#DDDF00'
+          color: '#C7D0AE'
         }, {
           name: 'Museum Mensch und Natur',
           id: 'E',
-          color: '#24CBE5'
+          color: '#A5C2D4'
         }, {
           name: 'Museum Brandhorst',
           id: 'F',
-          color: '#64E572'
+          color: '#D9CFB3'
         }, {
           name: 'Münchner Stadtmuseum',
           id: 'G',
-          color: '#FF9655'
+          color: '#AECCC4'
         }, {
           name: 'Deutsches Museum - Verkehrszentrum',
           id: 'H',
           colorValue: 8,
-          color: '#FFF263'
+          color: '#D2BCA9'
         }, {
           name: 'Deutsches Museum - Museumsinsel',
           id: 'I',
-          color: '#6AF9C4'
+          color: '#CB9D88'
         }, {
           name: 'Bayerisches Nationalmuseum',
           id: 'J',
-          color: '#8CB8E7'
+          color: '#8D9C88'
         }, {
           name: 'Alte Pinakothek',
           id: 'K',
@@ -204,7 +204,7 @@ Highcharts.chart('tree_chart_4', {
     }
   ],
   title: {
-    text: '2015'
+    text: 'Anzahl der Besucher 2015'
   },
   credits: {
       enabled: false

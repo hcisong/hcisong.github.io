@@ -5217,7 +5217,7 @@ text {
   font-size: 20px; }
 
 #firstPage {
-  background: transparent url("../img/section_bg_1.jpg") left top no-repeat;
+  background: transparent url("../img/section_bg_1.jpg") left center no-repeat;
   background-size: 100% auto; }
   #firstPage .firstPage_content {
     padding: 50px;
@@ -5230,5 +5230,27 @@ text {
 
 #firstPage {
   height: 100%; }
+
+#secondPage {
+  padding-top: 20px; }
+  #secondPage #line_basic {
+    position: relative;
+    min-height: 1px;
+    padding-left: 15px;
+    padding-right: 15px; }
+    @media (min-width: 992px) {
+      #secondPage #line_basic {
+        float: left;
+        width: 100%; } }
+  #secondPage .secondPage_content {
+    position: relative;
+    min-height: 1px;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-top: 60px; }
+    @media (min-width: 992px) {
+      #secondPage .secondPage_content {
+        float: left;
+        width: 100%; } }
 
 /*# sourceMappingURL=style.css.map */
