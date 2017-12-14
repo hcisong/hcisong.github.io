@@ -198,7 +198,7 @@ Highcharts.chart('tree_chart_5', {
 {name: 'Aug 2016', parent: 'K', value: 18425},
 {name: 'Sep 2016', parent: 'K', value: 11871},
 {name: 'Oct 2016', parent: 'K', value: 7498},
-{name: 'Nov 2016', parent: 'K', value: 201611},
+{name: 'Nov 2016', parent: 'K', value: 13856},
 {name: 'Dec 2016', parent: 'K', value: 15503}
       ]
     }
