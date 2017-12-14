@@ -23,7 +23,9 @@ $second-bg-color: $color-light-black;
 //font
 
 @mixin headline-font-family {
-  font-family: 'Prata', serif;
+  // font-family: 'Prata', serif;
+  font-family: 'Playfair Display', serif;
+
 }
 
 @mixin text-font-family {

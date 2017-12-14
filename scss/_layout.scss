@@ -153,19 +153,6 @@ text {
 .fp-slides {
   min-height: 400px;
   height: 70%;
-
-  //.slide {
-  //  position: absolute;
-  //  top: 0;
-  //}
-  //
-  //.highcharts-title {
-  //  position: absolute;
-  //  bottom: 0;
-  //}
-
-
-
 }
 
 .fp-controlArrow {
@@ -196,7 +183,7 @@ text {
     background: #0E0E0E;
 
     h1 {
-      letter-spacing: 1.5px;
+      letter-spacing: 1px;
     }
   }
 }
@@ -236,4 +223,71 @@ text {
       decoration: underline;
     }
   }
+}
+
+.carousel {
+  text-align: center;
+  width: 100%;
+  height: 70%;
+  margin: 0 auto;
+}
+
+.control-button {
+  width: 100vw;
+  z-index: 1000;
+
+  #left, #right {
+    position: absolute;
+    top: 0;
+    width: 70px;
+    height: 80%;
+
+    // padding-top: 40%;
+    background: none;
+    border: none;
+
+    img {
+      margin-top: 170px;
+      width: 100%;
+    }
+  }
+
+  #left {
+    left: 0;
+  }
+
+  #right {
+    right: 0;
+  }
+}
+
+
+ul.img-list {
+  position: relative;
+  display: block;
+  width: 100%;
+  padding-left: 0;
+  list-style-type: none;
+  z-index: 0;
+
+  li {
+    position: absolute;
+    display: none;
+    width: 100%;
+    height: 630px;
+    margin: 0 auto;
+    top: 0;
+    z-index: 0;
+    overflow: hidden;
+
+    img {
+      display: block;
+    }
+
+    &.active {
+      z-index: 1000;
+      display: block;
+    }
+  }
+
 }
