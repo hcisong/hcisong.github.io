@@ -33,4 +33,38 @@ $(document).ready(function() {
   left.addEventListener('click', carousel_left);
   right.addEventListener('click', carousel_right);
 
+  $('#bar_basic').show();
+  $('#bar_science').hide();
+  $('#bar_art').hide();
+
+  $('button[name=all]').on('click', function(e){
+    $('#bar_basic').show();
+    $('#bar_science').hide();
+    $('#bar_art').hide();
+  });
+
+  $('button[name=science]').on('click', function(e){
+    $('#bar_basic').hide();
+    $('#bar_science').show();
+    $('#bar_art').hide();
+  });
+
+  $('button[name=art]').on('click', function(e){
+    $('#bar_basic').hide();
+    $('#bar_science').hide();
+    $('#bar_art').show();
+  });
+
+  $('#bar_prices').show();
+  $('#bar_visit').hide();
+
+  $('button[name=price]').on('click', function(e){
+    $('#bar_prices').show();
+    $('#bar_visit').hide();
+  });
+
+  $('button[name=visit]').on('click', function(e){
+    $('#bar_prices').hide();
+    $('#bar_visit').show();
+  });
 });
