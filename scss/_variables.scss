@@ -14,7 +14,7 @@ $color-dark-black: #212121;
 $color-light-black: #3F3F3F;
 $color-white: #FFFFFF;
 $color-dark-white: #F2F2F2;
-$color-text: #163549;
+$color-text: #000F00;
 
 
 $base-bg-color: $color-dark-white;
@@ -29,5 +29,5 @@ $second-bg-color: $color-light-black;
 }
 
 @mixin text-font-family {
-  font-family: 'Ubuntu', sans-serif;
+  font-family: 'Dosis', sans-serif;
 }

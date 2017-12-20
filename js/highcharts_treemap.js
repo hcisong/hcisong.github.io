@@ -18,7 +18,7 @@ Highcharts.chart('tree_chart_1', {
             verticalAlign: 'top',
             style: {
               fontSize: '15px',
-              fontWeight: 'regular'
+              fontWeight: '400'
             }
           }
         }
@@ -606,5 +606,14 @@ Highcharts.chart('tree_chart_1', {
   },
   credits: {
       enabled: false
+  },
+  plotOptions: {
+    treemap: {
+      dataLabels: {
+        style: {
+          textOutline: false
+        }
+      }
+    }
   }
 });

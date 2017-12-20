@@ -4990,7 +4990,7 @@ button.close {
   .main-nav-toggle span, .main-nav-toggle span:after, .main-nav-toggle span:before {
     width: 100%;
     height: 2px;
-    background-color: #163549;
+    background-color: #000F00;
     transition: all 0.3s;
     border-radius: 1px;
     -webkit-backface-visibility: hidden;
@@ -5054,43 +5054,45 @@ button.close {
           width: 100%;
           text-align: center; } }
       .main-nav ul.navbar-nav li:hover a {
+        color: rgba(0, 0, 0, 0.5);
         text-decoration: none;
         background: none; }
       .main-nav ul.navbar-nav li a {
         font-family: 'Playfair Display', serif;
         display: inline-block;
         padding: 0;
-        color: #163549;
-        font-size: 14px;
+        color: #000F00;
+        font-size: 10px;
         line-height: 20px;
         margin-bottom: 15px;
-        text-transform: uppercase;
         background: none; }
       .main-nav ul.navbar-nav li.active a {
         text-decoration: none;
-        border-bottom: 4px #163549 solid;
+        border-bottom: 4px black solid;
         background: none; }
+        .main-nav ul.navbar-nav li.active a:hover {
+          color: #000F00; }
       @media (min-width: 768px) {
         .main-nav ul.navbar-nav li + li {
-          margin-right: 30px; }
+          margin-right: 15px; }
         .main-nav ul.navbar-nav li a {
           margin-bottom: 0;
           margin-top: 6px;
-          font-size: 15px;
+          font-size: 10px;
           line-height: 65px; } }
       @media (min-width: 992px) {
         .main-nav ul.navbar-nav li + li {
-          margin-right: 50px; }
+          margin-right: 15px; }
         .main-nav ul.navbar-nav li a {
-          font-size: 16px; } }
+          font-size: 13px; } }
       @media (min-width: 1200px) {
         .main-nav ul.navbar-nav li + li {
-          margin-right: 70px; }
+          margin-right: 55px; }
         .main-nav ul.navbar-nav li a {
-          font-size: 18px; } }
+          font-size: 15px; } }
 
 body {
-  font-family: 'Ubuntu', sans-serif;
+  font-family: 'Dosis', sans-serif;
   font-size: 16px; }
   body a:focus {
     outline: none;
@@ -5114,20 +5116,30 @@ h4 {
   font-size: 18px; }
 
 p, a {
-  font-family: 'Ubuntu', sans-serif;
-  font-weight: 300; }
+  font-family: 'Dosis', sans-serif;
+  font-weight: 400;
+  letter-spacing: 0.1px; }
 
 #menu {
-  display: none;
-  position: fixed;
-  top: 0;
+  position: absolute;
+  display: block;
   width: 100%;
   height: 80px;
   background: rgba(255, 255, 255, 0.9);
   z-index: 1000;
   -webkit-box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.1);
   -moz-box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.1);
-  box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.1); }
+  box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.1);
+  -webkit-animation: .8s quick_nav_ani;
+  -moz-animation: .8s quick_nav_ani;
+  -o-animation: .8s quick_nav_ani;
+  animation: .8s quick_nav_ani; }
+
+@keyframes quick_nav_ani {
+  0% {
+    top: -50px; }
+  100% {
+    top: 0px; } }
   #menu .logo-name {
     position: relative;
     min-height: 1px;
@@ -5165,8 +5177,13 @@ p, a {
       #menu .logo-name img + p:hover {
         color: #000; }
 
+.sticky {
+  display: block;
+  position: fixed;
+  top: 0; }
+
 #fullpage {
-  color: #163549; }
+  color: #000F00; }
 
 svg {
   font-family: "Helvetica Neue", Helvetica; }

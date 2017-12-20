@@ -18,8 +18,9 @@
     <script src="https://code.highcharts.com/modules/treemap.js"></script>
     <script src="https://code.highcharts.com/modules/series-label.js"></script>
     <script src="https://code.highcharts.com/modules/exporting.js"></script>
-    <link href="https://fonts.googleapis.com/css?family=Prata" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet">
+    <link href=
+     "https://fonts.googleapis.com/css?family=Dosis:300, 400" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,700" rel="stylesheet">
 
     <link rel="stylesheet" href="build/style.css">
 
@@ -37,19 +38,25 @@
           <nav class="main-nav" role="navigation">
             <div class="main-nav-header">
               <button type="button" class="main-nav-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                <span class="icon-bar"></span>
+                <span class= a"icon-bar"></span>
               </button>
             </div>
             <div id="navbar" class="collapse navbar-collapse">
               <ul class="nav navbar-nav">
-                <li data-menuanchor="">
-                  <a href="#">Part1</a>
+                <li data-menuanchor="more_infos" class="">
+                  <a href="#more_infos">Mehr Infos</a>
                 </li>
-                <li data-menuanchor="" class="">
-                  <a href="#">Part2</a>
+                <li data-menuanchor="when_should_i_go" class="">
+                  <a href="#when_should_i_go">Jede Museusm</a>
                 </li>
-                <li data-menuanchor="" class="">
-                  <a href="#">Part3</a>
+                <li data-menuanchor="which_should_i_go" class="">
+                  <a href="#which_should_i_go">Jede Monate</a>
+                </li>
+                <li data-menuanchor="five_years" class="active">
+                  <a href="#five_years">Letzte fünf Jahre</a>
+                </li>
+                <li data-menuanchor="overview">
+                  <a href="#overview">Overview</a>
                 </li>
               </ul>
             </div>
@@ -60,7 +67,7 @@
     <div id="fullpage" class="">
       <div class="section" id="firstPage">
 
-      <div class="carousel">
+        <div class="carousel">
 
         <ul class="img-list">
           <li class="active">
@@ -161,10 +168,10 @@
             <div id="bar_visit">
             </div>
           </div>
-          <div class="infos">
+          <!-- <div class="infos">
             <button type="button" name="price">Preis</button>
             <button type="button" name="visit">Visit</button>
-          </div>
+          </div> -->
         </div>
         <div id="impress">
           <p>Informationsvisualisierung Projekt <br>
