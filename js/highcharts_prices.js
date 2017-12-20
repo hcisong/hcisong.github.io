@@ -15,13 +15,13 @@ Highcharts.chart('bar_prices', {
         'Schackgalerie',
         'Pinakothek der Moderne',
         'Neue Pinakothek',
-        'Museum Mensch und Natur',
         'Museum Brandhorst',
         'Münchner Stadtmuseum',
         'Deutsches Museum - Verkehrszentrum',
         'Deutsches Museum - Museumsinsel',
         'Bayerisches Nationalmuseum',
-        'Alte Pinakothek'
+        'Alte Pinakothek',
+        'Museum Mensch und Natur'
       ],
       crosshair: true
     }
@@ -85,13 +85,13 @@ Highcharts.chart('bar_prices', {
         4,
         10,
         7,
-        3.5,
         7,
         7,
         6,
         11,
         7,
-        4
+        4,
+        3.5
       ],
       color: '#CC9D86',
       tooltip: {
@@ -106,13 +106,13 @@ Highcharts.chart('bar_prices', {
         3,
         7,
         5,
-        2.5,
         5,
         3.5,
         3,
         4,
         6,
-        2
+        2,
+        2.5
       ],
       color: '#A6B9C4',
       tooltip: {
@@ -126,13 +126,13 @@ Highcharts.chart('bar_prices', {
         2,
         2.5,
         2,
-        null,
         2,
         2.5,
         2.5,
         3.5,
         2.5,
-        2
+        2,
+        null
       ],
       color: '#879A87',
       tooltip: {
