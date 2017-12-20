@@ -1,6 +1,6 @@
 Highcharts.chart('bar_months', {
   chart: {
-    type: 'line'
+    type: 'spline'
   },
   title: {
     text: 'MUSEEN in 12 Monate'
@@ -82,8 +82,8 @@ Highcharts.chart('bar_months', {
         24441.8,
         25528.8
       ],
-      color: '#969597'
-
+      color: '#969597',
+      visible: false
     }, {
       name: 'Schackgalerie',
       data: [
@@ -172,7 +172,7 @@ Highcharts.chart('bar_months', {
         10605,
         8538
       ],
-      color: '#D9CFB3',
+      color: '#A9988C',
       visible: false
     }, {
       name: 'Münchner Stadtmuseum',
@@ -226,8 +226,7 @@ Highcharts.chart('bar_months', {
         65403.2,
         71868.6
       ],
-      color: '#CB9D88',
-      visible: false
+      color: '#CB9D88'
     }, {
       name: 'Bayerisches Nationalmuseum',
       data: [
@@ -262,7 +261,7 @@ Highcharts.chart('bar_months', {
         19039.6,
         20631.8
       ],
-      color: '#DEEDEE',
+      color: '#9ACCD9',
       visible: false
     }
 

@@ -1,4 +1,10 @@
 $(document).ready(function() {
+  $('#fullpage').fullpage({
+      anchors:['overview', 'five_years', 'which_should_i_go','when_should_i_go','more_infos'],
+      menu: '#navbar',
+      scrollingSpeed: 800
+  });
+
   var left = document.getElementById('left');
   var right = document.getElementById('right');
 
@@ -66,5 +72,29 @@ $(document).ready(function() {
   $('button[name=visit]').on('click', function(e){
     $('#bar_prices').hide();
     $('#bar_visit').show();
+  });
+
+  // $('#menu').hide();
+  //
+  //
+  // $(window).scroll(function() {
+  //   var y = $(this).scrollTop();
+  //   if (y > 500) {
+  //     $('#menu').show();
+  //     alert('hahha');
+  //   } else {
+  //     $('#menu').hide();
+  //   }
+  // });
+
+  $(document).scroll(function () {
+    //stick nav to top of page
+    // var y = $(this).scrollTop();
+    // var navWrap = $('#menu').offset().top;
+    // if (y > navWrap) {
+    //     $('#menu').addClass('sticky');
+    // } else {
+    //     $('#menu').removeClass('sticky');
+    // }
   });
 });

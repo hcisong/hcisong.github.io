@@ -42,10 +42,27 @@ Highcharts.chart('bar_visit', {
     column: {
       pointPadding: 0.2,
       borderWidth: 0
+    },
+    series: {
+      events: {
+        legendItemClick: function(e){
+          e.preventDefault();
+        }
+      }
     }
   },
   legend: {
-    enabled: false
+    enabled: true,
+    layout: 'horizontal',
+    align: 'center',
+    verticalAlign: 'bottom',
+    x: 0,
+    y: 0,
+    floating: false,
+    borderWidth: 0,
+    backgroundColor: ((Highcharts.theme && Highcharts.theme.legendBackgroundColor) || '#FFFFFF'),
+    shadow: false,
+
   },
   credits: {
     enabled: false
