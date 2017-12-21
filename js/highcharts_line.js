@@ -155,7 +155,8 @@ categories: [
         14263,
         15383
       ],
-      visible: false
+      visible: false,
+      color: '#969597'
     },{
       name: 'Schackgalerie',
       data: [
@@ -220,7 +221,8 @@ categories: [
         1277,
         1017
       ],
-      visible: false
+      visible: false,
+      color: '#D5AEB7'
     },{
       name: 'Pinakothek der Moderne',
       data: [
@@ -284,7 +286,8 @@ categories: [
         0,
         0,
         0
-      ]
+      ],
+      color: '#CCCED7'
     }, {
       name: 'Neue Pinakothek',
       data: [
@@ -348,7 +351,8 @@ categories: [
         21680,
         17438,
         16878
-      ]
+      ],
+      color: '#C7D0AE'
     }, {
       name: 'Museum Mensch und Natur',
       data: [
@@ -412,7 +416,8 @@ categories: [
         16955,
         14586,
         10077
-      ]
+      ],
+      color: '#A5C2D4'
     },{
      name: 'Museum Brandhorst',
      data: [
@@ -477,7 +482,8 @@ categories: [
        7713,
        6180
      ],
-     visible: false
+     visible: false,
+     color: '#D9CFB3'
     },{
      name: 'Münchner Stadtmuseum',
      data: [
@@ -542,7 +548,8 @@ categories: [
        21139,
        11252
      ],
-     visible: false
+     visible: false,
+     color: '#AECCC4'
     },{
      name: 'Deutsches Museum - Verkehrszentrum',
      data: [
@@ -607,7 +614,8 @@ categories: [
        10403,
        8199
      ],
-     visible: false
+     visible: false,
+     color: '#D2BCA9'
     },{
      name: 'Deutsches Museum - Museumsinsel',
      data: [
@@ -671,7 +679,8 @@ categories: [
        105216,
        64393,
        68238
-     ]
+     ],
+     color: '#CB9D88'
     },{
      name: 'Bayerisches Nationalmuseum',
      data: [
@@ -736,7 +745,8 @@ categories: [
        6770,
        12017
      ],
-     visible: false
+     visible: false,
+     color: '#8D9C88'
     },{
      name: 'Alte Pinakothek',
      data: [
@@ -800,7 +810,8 @@ categories: [
        7498,
        13856,
        15503
-     ]
+     ],
+     color: '#DEEDEE'
    }, {
      name: 'Insgeamte Tourismus',
      data: [
@@ -864,7 +875,8 @@ categories: [
        665852,
        551198,
        575341
-     ]
+     ],
+     color: '#879A87'
    }, {
      name: 'Insgeamte Besucher',
      data: [
@@ -928,7 +940,8 @@ categories: [
         224970,
         171838,
         164744
-     ]
+     ],
+     color: '#A6B9C4'
    }
 
   ],

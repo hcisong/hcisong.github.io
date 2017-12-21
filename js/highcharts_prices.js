@@ -6,7 +6,7 @@ Highcharts.chart('bar_prices', {
     text: 'Average Monthly Temperature and Rainfall in Tokyo'
   },
   subtitle: {
-    text: 'Source: WorldClimate.com'
+    text: 'Source: www.pinakothek.de google.de'
   },
   xAxis: [
     {
@@ -77,7 +77,7 @@ Highcharts.chart('bar_prices', {
   },
   series: [
     {
-      name: 'Eintrittsprise',
+      name: 'Eintrittspreis',
       type: 'column',
       yAxis: 1,
       data: [
@@ -98,7 +98,7 @@ Highcharts.chart('bar_prices', {
         valueSuffix: ' Euro'
       }
     }, {
-      name: 'Ermäßigt',
+      name: 'Ermäßigtspreis',
       type: 'column',
       yAxis: 1,
       data: [
