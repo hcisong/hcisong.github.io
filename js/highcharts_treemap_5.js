@@ -9,14 +9,14 @@ Highcharts.chart('tree_chart_5', {
       levels: [
         {
           level: 1,
-          layoutAlgorithm: 'sliceAndDice',
+          layoutAlgorithm: 'squarified',
           dataLabels: {
             enabled: true,
             align: 'left',
             verticalAlign: 'top',
             style: {
               fontSize: '15px',
-              fontWeight: 'bold'
+              fontWeight: '400'
             }
           }
         }
@@ -67,146 +67,554 @@ Highcharts.chart('tree_chart_5', {
           name: 'Alte Pinakothek',
           id: 'K',
           color: '#DEEDEE'
-        },
-      {name: 'Jan', parent: 'A', value: 53449},
-{name: 'Feb', parent: 'A', value: 25775},
-{name: 'Mar', parent: 'A', value: 27577},
-{name: 'Apr', parent: 'A', value: 24092},
-{name: 'May', parent: 'A', value: 17970},
-{name: 'Jun', parent: 'A', value: 15706},
-{name: 'Jul', parent: 'A', value: 19381},
-{name: 'Aug', parent: 'A', value: 15230},
-{name: 'Sep', parent: 'A', value: 10100},
-{name: 'Oct', parent: 'A', value: 26406},
-{name: 'Nov', parent: 'A', value: 14263},
-{name: 'Dec', parent: 'A', value: 15383},
-{name: 'Jan', parent: 'B', value: 881},
-{name: 'Feb', parent: 'B', value: 1031},
-{name: 'Mar', parent: 'B', value: 659},
-{name: 'Apr', parent: 'B', value: 753},
-{name: 'May', parent: 'B', value: 1338},
-{name: 'Jun', parent: 'B', value: 1598},
-{name: 'Jul', parent: 'B', value: 1129},
-{name: 'Aug', parent: 'B', value: 711},
-{name: 'Sep', parent: 'B', value: 539},
-{name: 'Oct', parent: 'B', value: 1154},
-{name: 'Nov', parent: 'B', value: 1277},
-{name: 'Dec', parent: 'B', value: 1017},
-{name: 'Jan', parent: 'C', value: 28791},
-{name: 'Feb', parent: 'C', value: 27556},
-{name: 'Mar', parent: 'C', value: 23264},
-{name: 'Apr', parent: 'C', value: 0},
-{name: 'May', parent: 'C', value: 0},
-{name: 'Jun', parent: 'C', value: 0},
-{name: 'Jul', parent: 'C', value: 0},
-{name: 'Aug', parent: 'C', value: 0},
-{name: 'Sep', parent: 'C', value: 0},
-{name: 'Oct', parent: 'C', value: 0},
-{name: 'Nov', parent: 'C', value: 0},
-{name: 'Dec', parent: 'C', value: 0},
-{name: 'Jan', parent: 'D', value: 17200},
-{name: 'Feb', parent: 'D', value: 16960},
-{name: 'Mar', parent: 'D', value: 20289},
-{name: 'Apr', parent: 'D', value: 18140},
-{name: 'May', parent: 'D', value: 16041},
-{name: 'Jun', parent: 'D', value: 17756},
-{name: 'Jul', parent: 'D', value: 21160},
-{name: 'Aug', parent: 'D', value: 19210},
-{name: 'Sep', parent: 'D', value: 12636},
-{name: 'Oct', parent: 'D', value: 21680},
-{name: 'Nov', parent: 'D', value: 17438},
-{name: 'Dec', parent: 'D', value: 16878},
-{name: 'Jan', parent: 'E', value: 18500},
-{name: 'Feb', parent: 'E', value: 17679},
-{name: 'Mar', parent: 'E', value: 19141},
-{name: 'Apr', parent: 'E', value: 13889},
-{name: 'May', parent: 'E', value: 16348},
-{name: 'Jun', parent: 'E', value: 13362},
-{name: 'Jul', parent: 'E', value: 15466},
-{name: 'Aug', parent: 'E', value: 13320},
-{name: 'Sep', parent: 'E', value: 8283},
-{name: 'Oct', parent: 'E', value: 16955},
-{name: 'Nov', parent: 'E', value: 14586},
-{name: 'Dec', parent: 'E', value: 10077},
-{name: 'Jan', parent: 'F', value: 11711},
-{name: 'Feb', parent: 'F', value: 10294},
-{name: 'Mar', parent: 'F', value: 10250},
-{name: 'Apr', parent: 'F', value: 9119},
-{name: 'May', parent: 'F', value: 3561},
-{name: 'Jun', parent: 'F', value: 8574},
-{name: 'Jul', parent: 'F', value: 9618},
-{name: 'Aug', parent: 'F', value: 6917},
-{name: 'Sep', parent: 'F', value: 5021},
-{name: 'Oct', parent: 'F', value: 9509},
-{name: 'Nov', parent: 'F', value: 7713},
-{name: 'Dec', parent: 'F', value: 6180},
-{name: 'Jan', parent: 'G', value: 13605},
-{name: 'Feb', parent: 'G', value: 15615},
-{name: 'Mar', parent: 'G', value: 19283},
-{name: 'Apr', parent: 'G', value: 14229},
-{name: 'May', parent: 'G', value: 14844},
-{name: 'Jun', parent: 'G', value: 12969},
-{name: 'Jul', parent: 'G', value: 9631},
-{name: 'Aug', parent: 'G', value: 5799},
-{name: 'Sep', parent: 'G', value: 13313},
-{name: 'Oct', parent: 'G', value: 17388},
-{name: 'Nov', parent: 'G', value: 21139},
-{name: 'Dec', parent: 'G', value: 11252},
-{name: 'Jan', parent: 'H', value: 12436},
-{name: 'Feb', parent: 'H', value: 9865},
-{name: 'Mar', parent: 'H', value: 10078},
-{name: 'Apr', parent: 'H', value: 9117},
-{name: 'May', parent: 'H', value: 10674},
-{name: 'Jun', parent: 'H', value: 10458},
-{name: 'Jul', parent: 'H', value: 9336},
-{name: 'Aug', parent: 'H', value: 8934},
-{name: 'Sep', parent: 'H', value: 5317},
-{name: 'Oct', parent: 'H', value: 11978},
-{name: 'Nov', parent: 'H', value: 10403},
-{name: 'Dec', parent: 'H', value: 8199},
-{name: 'Jan', parent: 'I', value: 76387},
-{name: 'Feb', parent: 'I', value: 72935},
-{name: 'Mar', parent: 'I', value: 94819},
-{name: 'Apr', parent: 'I', value: 78826},
-{name: 'May', parent: 'I', value: 80679},
-{name: 'Jun', parent: 'I', value: 77385},
-{name: 'Jul', parent: 'I', value: 106962},
-{name: 'Aug', parent: 'I', value: 94313},
-{name: 'Sep', parent: 'I', value: 52829},
-{name: 'Oct', parent: 'I', value: 105216},
-{name: 'Nov', parent: 'I', value: 64393},
-{name: 'Dec', parent: 'I', value: 68238},
-{name: 'Jan', parent: 'J', value: 7857},
-{name: 'Feb', parent: 'J', value: 10470},
-{name: 'Mar', parent: 'J', value: 6555},
-{name: 'Apr', parent: 'J', value: 5507},
-{name: 'May', parent: 'J', value: 7938},
-{name: 'Jun', parent: 'J', value: 10282},
-{name: 'Jul', parent: 'J', value: 12486},
-{name: 'Aug', parent: 'J', value: 8891},
-{name: 'Sep', parent: 'J', value: 4011},
-{name: 'Oct', parent: 'J', value: 7186},
-{name: 'Nov', parent: 'J', value: 6770},
-{name: 'Dec', parent: 'J', value: 12017},
-{name: 'Jan', parent: 'K', value: 16098},
-{name: 'Feb', parent: 'K', value: 12462},
-{name: 'Mar', parent: 'K', value: 17194},
-{name: 'Apr', parent: 'K', value: 15918},
-{name: 'May', parent: 'K', value: 15412},
-{name: 'Jun', parent: 'K', value: 16399},
-{name: 'Jul', parent: 'K', value: 19360},
-{name: 'Aug', parent: 'K', value: 18425},
-{name: 'Sep', parent: 'K', value: 11871},
-{name: 'Oct', parent: 'K', value: 7498},
-{name: 'Nov', parent: 'K', value: 13856},
-{name: 'Dec', parent: 'K', value: 15503}
+        }, {
+          name: 'Jan',
+          parent: 'A',
+          value: 53449
+        }, {
+          name: 'Feb',
+          parent: 'A',
+          value: 25775
+        }, {
+          name: 'Mar',
+          parent: 'A',
+          value: 27577
+        }, {
+          name: 'Apr',
+          parent: 'A',
+          value: 24092
+        }, {
+          name: 'May',
+          parent: 'A',
+          value: 17970
+        }, {
+          name: 'Jun',
+          parent: 'A',
+          value: 15706
+        }, {
+          name: 'Jul',
+          parent: 'A',
+          value: 19381
+        }, {
+          name: 'Aug',
+          parent: 'A',
+          value: 15230
+        }, {
+          name: 'Sep',
+          parent: 'A',
+          value: 10100
+        }, {
+          name: 'Oct',
+          parent: 'A',
+          value: 26406
+        }, {
+          name: 'Nov',
+          parent: 'A',
+          value: 14263
+        }, {
+          name: 'Dec',
+          parent: 'A',
+          value: 15383
+        }, {
+          name: 'Jan',
+          parent: 'B',
+          value: 881
+        }, {
+          name: 'Feb',
+          parent: 'B',
+          value: 1031
+        }, {
+          name: 'Mar',
+          parent: 'B',
+          value: 659
+        }, {
+          name: 'Apr',
+          parent: 'B',
+          value: 753
+        }, {
+          name: 'May',
+          parent: 'B',
+          value: 1338
+        }, {
+          name: 'Jun',
+          parent: 'B',
+          value: 1598
+        }, {
+          name: 'Jul',
+          parent: 'B',
+          value: 1129
+        }, {
+          name: 'Aug',
+          parent: 'B',
+          value: 711
+        }, {
+          name: 'Sep',
+          parent: 'B',
+          value: 539
+        }, {
+          name: 'Oct',
+          parent: 'B',
+          value: 1154
+        }, {
+          name: 'Nov',
+          parent: 'B',
+          value: 1277
+        }, {
+          name: 'Dec',
+          parent: 'B',
+          value: 1017
+        }, {
+          name: 'Jan',
+          parent: 'C',
+          value: 28791
+        }, {
+          name: 'Feb',
+          parent: 'C',
+          value: 27556
+        }, {
+          name: 'Mar',
+          parent: 'C',
+          value: 23264
+        }, {
+          name: 'Apr',
+          parent: 'C',
+          value: 0
+        }, {
+          name: 'May',
+          parent: 'C',
+          value: 0
+        }, {
+          name: 'Jun',
+          parent: 'C',
+          value: 0
+        }, {
+          name: 'Jul',
+          parent: 'C',
+          value: 0
+        }, {
+          name: 'Aug',
+          parent: 'C',
+          value: 0
+        }, {
+          name: 'Sep',
+          parent: 'C',
+          value: 0
+        }, {
+          name: 'Oct',
+          parent: 'C',
+          value: 0
+        }, {
+          name: 'Nov',
+          parent: 'C',
+          value: 0
+        }, {
+          name: 'Dec',
+          parent: 'C',
+          value: 0
+        }, {
+          name: 'Jan',
+          parent: 'D',
+          value: 17200
+        }, {
+          name: 'Feb',
+          parent: 'D',
+          value: 16960
+        }, {
+          name: 'Mar',
+          parent: 'D',
+          value: 20289
+        }, {
+          name: 'Apr',
+          parent: 'D',
+          value: 18140
+        }, {
+          name: 'May',
+          parent: 'D',
+          value: 16041
+        }, {
+          name: 'Jun',
+          parent: 'D',
+          value: 17756
+        }, {
+          name: 'Jul',
+          parent: 'D',
+          value: 21160
+        }, {
+          name: 'Aug',
+          parent: 'D',
+          value: 19210
+        }, {
+          name: 'Sep',
+          parent: 'D',
+          value: 12636
+        }, {
+          name: 'Oct',
+          parent: 'D',
+          value: 21680
+        }, {
+          name: 'Nov',
+          parent: 'D',
+          value: 17438
+        }, {
+          name: 'Dec',
+          parent: 'D',
+          value: 16878
+        }, {
+          name: 'Jan',
+          parent: 'E',
+          value: 18500
+        }, {
+          name: 'Feb',
+          parent: 'E',
+          value: 17679
+        }, {
+          name: 'Mar',
+          parent: 'E',
+          value: 19141
+        }, {
+          name: 'Apr',
+          parent: 'E',
+          value: 13889
+        }, {
+          name: 'May',
+          parent: 'E',
+          value: 16348
+        }, {
+          name: 'Jun',
+          parent: 'E',
+          value: 13362
+        }, {
+          name: 'Jul',
+          parent: 'E',
+          value: 15466
+        }, {
+          name: 'Aug',
+          parent: 'E',
+          value: 13320
+        }, {
+          name: 'Sep',
+          parent: 'E',
+          value: 8283
+        }, {
+          name: 'Oct',
+          parent: 'E',
+          value: 16955
+        }, {
+          name: 'Nov',
+          parent: 'E',
+          value: 14586
+        }, {
+          name: 'Dec',
+          parent: 'E',
+          value: 10077
+        }, {
+          name: 'Jan',
+          parent: 'F',
+          value: 11711
+        }, {
+          name: 'Feb',
+          parent: 'F',
+          value: 10294
+        }, {
+          name: 'Mar',
+          parent: 'F',
+          value: 10250
+        }, {
+          name: 'Apr',
+          parent: 'F',
+          value: 9119
+        }, {
+          name: 'May',
+          parent: 'F',
+          value: 3561
+        }, {
+          name: 'Jun',
+          parent: 'F',
+          value: 8574
+        }, {
+          name: 'Jul',
+          parent: 'F',
+          value: 9618
+        }, {
+          name: 'Aug',
+          parent: 'F',
+          value: 6917
+        }, {
+          name: 'Sep',
+          parent: 'F',
+          value: 5021
+        }, {
+          name: 'Oct',
+          parent: 'F',
+          value: 9509
+        }, {
+          name: 'Nov',
+          parent: 'F',
+          value: 7713
+        }, {
+          name: 'Dec',
+          parent: 'F',
+          value: 6180
+        }, {
+          name: 'Jan',
+          parent: 'G',
+          value: 13605
+        }, {
+          name: 'Feb',
+          parent: 'G',
+          value: 15615
+        }, {
+          name: 'Mar',
+          parent: 'G',
+          value: 19283
+        }, {
+          name: 'Apr',
+          parent: 'G',
+          value: 14229
+        }, {
+          name: 'May',
+          parent: 'G',
+          value: 14844
+        }, {
+          name: 'Jun',
+          parent: 'G',
+          value: 12969
+        }, {
+          name: 'Jul',
+          parent: 'G',
+          value: 9631
+        }, {
+          name: 'Aug',
+          parent: 'G',
+          value: 5799
+        }, {
+          name: 'Sep',
+          parent: 'G',
+          value: 13313
+        }, {
+          name: 'Oct',
+          parent: 'G',
+          value: 17388
+        }, {
+          name: 'Nov',
+          parent: 'G',
+          value: 21139
+        }, {
+          name: 'Dec',
+          parent: 'G',
+          value: 11252
+        }, {
+          name: 'Jan',
+          parent: 'H',
+          value: 12436
+        }, {
+          name: 'Feb',
+          parent: 'H',
+          value: 9865
+        }, {
+          name: 'Mar',
+          parent: 'H',
+          value: 10078
+        }, {
+          name: 'Apr',
+          parent: 'H',
+          value: 9117
+        }, {
+          name: 'May',
+          parent: 'H',
+          value: 10674
+        }, {
+          name: 'Jun',
+          parent: 'H',
+          value: 10458
+        }, {
+          name: 'Jul',
+          parent: 'H',
+          value: 9336
+        }, {
+          name: 'Aug',
+          parent: 'H',
+          value: 8934
+        }, {
+          name: 'Sep',
+          parent: 'H',
+          value: 5317
+        }, {
+          name: 'Oct',
+          parent: 'H',
+          value: 11978
+        }, {
+          name: 'Nov',
+          parent: 'H',
+          value: 10403
+        }, {
+          name: 'Dec',
+          parent: 'H',
+          value: 8199
+        }, {
+          name: 'Jan',
+          parent: 'I',
+          value: 76387
+        }, {
+          name: 'Feb',
+          parent: 'I',
+          value: 72935
+        }, {
+          name: 'Mar',
+          parent: 'I',
+          value: 94819
+        }, {
+          name: 'Apr',
+          parent: 'I',
+          value: 78826
+        }, {
+          name: 'May',
+          parent: 'I',
+          value: 80679
+        }, {
+          name: 'Jun',
+          parent: 'I',
+          value: 77385
+        }, {
+          name: 'Jul',
+          parent: 'I',
+          value: 106962
+        }, {
+          name: 'Aug',
+          parent: 'I',
+          value: 94313
+        }, {
+          name: 'Sep',
+          parent: 'I',
+          value: 52829
+        }, {
+          name: 'Oct',
+          parent: 'I',
+          value: 105216
+        }, {
+          name: 'Nov',
+          parent: 'I',
+          value: 64393
+        }, {
+          name: 'Dec',
+          parent: 'I',
+          value: 68238
+        }, {
+          name: 'Jan',
+          parent: 'J',
+          value: 7857
+        }, {
+          name: 'Feb',
+          parent: 'J',
+          value: 10470
+        }, {
+          name: 'Mar',
+          parent: 'J',
+          value: 6555
+        }, {
+          name: 'Apr',
+          parent: 'J',
+          value: 5507
+        }, {
+          name: 'May',
+          parent: 'J',
+          value: 7938
+        }, {
+          name: 'Jun',
+          parent: 'J',
+          value: 10282
+        }, {
+          name: 'Jul',
+          parent: 'J',
+          value: 12486
+        }, {
+          name: 'Aug',
+          parent: 'J',
+          value: 8891
+        }, {
+          name: 'Sep',
+          parent: 'J',
+          value: 4011
+        }, {
+          name: 'Oct',
+          parent: 'J',
+          value: 7186
+        }, {
+          name: 'Nov',
+          parent: 'J',
+          value: 6770
+        }, {
+          name: 'Dec',
+          parent: 'J',
+          value: 12017
+        }, {
+          name: 'Jan',
+          parent: 'K',
+          value: 16098
+        }, {
+          name: 'Feb',
+          parent: 'K',
+          value: 12462
+        }, {
+          name: 'Mar',
+          parent: 'K',
+          value: 17194
+        }, {
+          name: 'Apr',
+          parent: 'K',
+          value: 15918
+        }, {
+          name: 'May',
+          parent: 'K',
+          value: 15412
+        }, {
+          name: 'Jun',
+          parent: 'K',
+          value: 16399
+        }, {
+          name: 'Jul',
+          parent: 'K',
+          value: 19360
+        }, {
+          name: 'Aug',
+          parent: 'K',
+          value: 18425
+        }, {
+          name: 'Sep',
+          parent: 'K',
+          value: 11871
+        }, {
+          name: 'Oct',
+          parent: 'K',
+          value: 7498
+        }, {
+          name: 'Nov',
+          parent: 'K',
+          value: 13856
+        }, {
+          name: 'Dec',
+          parent: 'K',
+          value: 15503
+        }
       ]
     }
   ],
   title: {
-    text: 'Anzahl der Besucher 2016'
+    text: 'Anzahl der Besucher/innen 2016'
+  },
+  subtitle: {
+    text: 'Hier zeigt die Proportion von der Anzahl der Besucher/innen von folgenden 11 Museen. Die Fläche von jeder Farbe repräsentiert die Anzahl der Besucher/innen von diesem Museum, klicken auf der Farbe können Sie noch mehr Details von jedem Monat entdecken. <br>Je größer der Fläche ist, desto mehr Leute in diesem Jahr entsprechendes Museum besucht haben. Sie können durch die Pfeile das Jahr von 2012 bis 2016 wechseln.'
   },
   credits: {
-      enabled: false
+    enabled: false
+  },
+  plotOptions: {
+    treemap: {
+      dataLabels: {
+        style: {
+          textOutline: false
+        }
+      }
+    }
   }
 });

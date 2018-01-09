@@ -5,18 +5,19 @@ Highcharts.chart('tree_chart_2', {
       type: "treemap",
       layoutAlgorithm: 'squarified',
       allowDrillToNode: true,
+      levelIsConstant: false,
       alternateStartingDirection: true,
       levels: [
         {
           level: 1,
-          layoutAlgorithm: 'sliceAndDice',
+          layoutAlgorithm: 'squarified',
           dataLabels: {
             enabled: true,
             align: 'left',
             verticalAlign: 'top',
             style: {
               fontSize: '15px',
-              fontWeight: 'bold'
+              fontWeight: '400'
             }
           }
         }
@@ -600,9 +601,21 @@ Highcharts.chart('tree_chart_2', {
     }
   ],
   title: {
-    text: 'Anzahl der Besucher 2013'
+    text: 'Anzahl der Besucher/innen 2013'
+  },
+  subtitle: {
+    text: 'Hier zeigt die Proportion von der Anzahl der Besucher/innen von folgenden 11 Museen. Die Fläche von jeder Farbe repräsentiert die Anzahl der Besucher/innen von diesem Museum, klicken auf der Farbe können Sie noch mehr Details von jedem Monat entdecken. <br>Je größer der Fläche ist, desto mehr Leute in diesem Jahr entsprechendes Museum besucht haben. Sie können durch die Pfeile das Jahr von 2012 bis 2016 wechseln.'
   },
   credits: {
-      enabled: false
+    enabled: false
+  },
+  plotOptions: {
+    treemap: {
+      dataLabels: {
+        style: {
+          textOutline: false
+        }
+      }
+    }
   }
 });
