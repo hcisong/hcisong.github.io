@@ -3,10 +3,10 @@ Highcharts.chart('bar_months', {
     type: 'spline'
   },
   title: {
-    text: 'MUSEEN in 12 Monate'
+    text: 'Besucheranzahl von jedem Museum'
   },
   subtitle: {
-    text: 'xxx'
+    text: 'Klicken die Legende, um die Museum zu wechseln.'
   },
   xAxis: {
     categories: [

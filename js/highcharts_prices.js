@@ -3,10 +3,7 @@ Highcharts.chart('bar_prices', {
     zoomType: 'xy'
   },
   title: {
-    text: 'Average Monthly Temperature and Rainfall in Tokyo'
-  },
-  subtitle: {
-    text: 'Source: www.pinakothek.de google.de'
+    text: 'Eintrittspreis und Besuchsdauer'
   },
   xAxis: [
     {
@@ -29,7 +26,7 @@ Highcharts.chart('bar_prices', {
   yAxis: [
     {
       title: {
-        text: 'Besucherdauer',
+        text: 'Besuchsdauer',
         style: {
           color: '#879A87'
         }
@@ -119,7 +116,7 @@ Highcharts.chart('bar_prices', {
         valueSuffix: ' Euro'
       }
     }, {
-      name: 'Besucherdauer',
+      name: 'Besuchsdauer',
       type: 'line',
       data: [
         2.5,

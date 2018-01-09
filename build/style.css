@@ -5120,6 +5120,12 @@ p, a {
   font-weight: 400;
   letter-spacing: 0.1px; }
 
+a {
+  color: white; }
+  a:hover {
+    color: white;
+    text-decoration: underline; }
+
 #menu {
   position: fixed;
   display: block;
@@ -5269,16 +5275,38 @@ text {
       #secondPage #line_basic {
         float: left;
         width: 100%; } }
-  #secondPage .secondPage_content {
-    position: relative;
-    min-height: 1px;
-    padding-left: 15px;
-    padding-right: 15px;
-    margin-top: 60px; }
-    @media (min-width: 992px) {
-      #secondPage .secondPage_content {
-        float: left;
-        width: 100%; } }
+
+.secondPage_content, .thirdPage_content, .fourthPage_content, .fifthPage_content {
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-top: 30px; }
+  @media (min-width: 992px) {
+    .secondPage_content, .thirdPage_content, .fourthPage_content, .fifthPage_content {
+      float: left;
+      width: 83.3333333333%; } }
+  @media (min-width: 992px) {
+    .secondPage_content, .thirdPage_content, .fourthPage_content, .fifthPage_content {
+      margin-left: 8.3333333333%; } }
+  .secondPage_content a, .thirdPage_content a, .fourthPage_content a, .fifthPage_content a {
+    color: black; }
+
+.museen_catalog {
+  margin: 10px 0; }
+  .museen_catalog button {
+    width: 30%;
+    height: 35px;
+    line-height: 35px;
+    background: white;
+    border: 1px black solid; }
+    .museen_catalog button + button {
+      margin-left: 2%; }
+    .museen_catalog button:hover {
+      color: white;
+      background: black; }
+    .museen_catalog button:focus {
+      outline: 0; }
 
 #impress {
   position: absolute;

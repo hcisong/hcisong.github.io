@@ -4,10 +4,10 @@ Highcharts.chart('bar_visit', {
     height: 500
   },
   title: {
-    text: 'MUSEEN Visit'
+    text: 'Besucheranzahl von jedem Museum'
   },
   subtitle: {
-    text: 'xxx'
+    text: 'Klicken die Legende, um die Museum zu wechseln.'
   },
   xAxis: {
     categories: [

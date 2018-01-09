@@ -4,10 +4,10 @@ Highcharts.chart('bar_art', {
     height: 500
   },
   title: {
-    text: 'MUSEEN Katalog Art'
+    text: 'Besucherzahl von MUSEEN (über die Kunst)'
   },
   subtitle: {
-    text: 'xxx'
+    text: 'Klick die untere Kreises, um der Monat zu wechseln.'
   },
   xAxis: {
     categories: [

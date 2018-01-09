@@ -1,13 +1,13 @@
 Highcharts.chart('bar_science', {
     chart: {
-        type: 'bar',
-        height: 500
+      type: 'bar',
+      height: 500
     },
     title: {
-        text: 'MUSEEN Katalog Science'
+      text: 'Besucherzahl von MUSEEN (über die Wisseschaft)'
     },
     subtitle: {
-        text: 'xxx'
+      text: 'Klick die untere Kreises, um der Monat zu wechseln.'
     },
     xAxis: {
       categories: [

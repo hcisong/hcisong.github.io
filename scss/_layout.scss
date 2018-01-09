@@ -37,6 +37,15 @@ p, a {
   letter-spacing: 0.1px;
 }
 
+a {
+  color: white;
+
+  &:hover {
+    color: white;
+    text-decoration: underline;
+  }
+}
+
 #menu {
   position: fixed;
   display: block;
@@ -208,9 +217,40 @@ text {
   #line_basic {
     @include make-md-column(12);
   }
-  .secondPage_content {
-    @include make-md-column(12);
-    margin-top: 60px;
+}
+
+.secondPage_content, .thirdPage_content, .fourthPage_content, .fifthPage_content {
+  @include make-md-column(10);
+  @include make-md-column-offset(1);
+  margin-top: 30px;
+
+  a {
+    color: black;
+  }
+}
+
+.museen_catalog {
+  margin: 10px 0;
+
+  button {
+    width: 30%;
+    height: 35px;
+    line-height: 35px;
+    background: white;
+    border: 1px black solid;
+
+    & + button {
+      margin-left: 2%;
+    }
+
+    &:hover {
+      color: white;
+      background: black;
+    }
+
+    &:focus {
+      outline:0;
+    }
   }
 }
 

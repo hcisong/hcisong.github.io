@@ -601,7 +601,7 @@ Highcharts.chart('tree_chart_2', {
     }
   ],
   title: {
-    text: 'Anzahl der Besucher/innen 2013'
+    text: 'Besucheranzahl von 11 Mussen in 2013'
   },
   subtitle: {
     text: 'Hier zeigt die Proportion von der Anzahl der Besucher/innen von folgenden 11 Museen. Die Fläche von jeder Farbe repräsentiert die Anzahl der Besucher/innen von diesem Museum, klicken auf der Farbe können Sie noch mehr Details von jedem Monat entdecken. <br>Je größer der Fläche ist, desto mehr Leute in diesem Jahr entsprechendes Museum besucht haben. Sie können durch die Pfeile das Jahr von 2012 bis 2016 wechseln.'
