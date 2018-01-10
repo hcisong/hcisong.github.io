@@ -13,6 +13,9 @@ Highcharts.chart('bar_art', {
   subtitle: {
     text: 'Klicken Sie die Legende, um das Museum zu wechseln.'
   },
+  exporting: {
+    enabled: false
+  },
   xAxis: {
     categories: [
       'Städtische Galerie im Lenbachhaus',

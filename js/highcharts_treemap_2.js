@@ -1,5 +1,4 @@
 Highcharts.chart('tree_chart_2', {
-
   series: [
     {
       type: "treemap",
@@ -14,11 +13,7 @@ Highcharts.chart('tree_chart_2', {
           dataLabels: {
             enabled: true,
             align: 'left',
-            verticalAlign: 'top',
-            style: {
-              fontSize: '15px',
-              fontWeight: '400'
-            }
+            verticalAlign: 'top'
           }
         }
       ],
@@ -617,5 +612,8 @@ Highcharts.chart('tree_chart_2', {
         }
       }
     }
+  },
+  exporting: {
+    enabled: false
   }
 });

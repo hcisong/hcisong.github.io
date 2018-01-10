@@ -13,11 +13,7 @@ Highcharts.chart('tree_chart_1', {
           dataLabels: {
             enabled: true,
             align: 'left',
-            verticalAlign: 'top',
-            style: {
-              fontSize: '15px',
-              fontWeight: '400'
-            }
+            verticalAlign: 'top'
           }
         }
       ],
@@ -616,5 +612,8 @@ Highcharts.chart('tree_chart_1', {
         }
       }
     }
+  },
+  exporting : {
+    enabled: false
   }
 });

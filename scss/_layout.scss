@@ -293,6 +293,7 @@ text {
     position: absolute;
     top: 0;
     width: 70px;
+    cursor: pointer;
     // height: 50%;
     margin-top: 50px;
     background: none;
@@ -328,7 +329,7 @@ ul.img-list {
     height: 630px;
     margin: 0 auto;
     top: 0;
-    padding-top: 50px;
+    padding-top: 20px;
     z-index: 0;
     overflow: hidden;
 

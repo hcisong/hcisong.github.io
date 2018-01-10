@@ -286,6 +286,8 @@ Highcharts.chart('bar_months', {
         }
       }
     ]
+  },
+  exporting: {
+    enabled: false
   }
-
 });

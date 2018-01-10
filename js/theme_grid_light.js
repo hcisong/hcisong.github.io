@@ -28,9 +28,8 @@ Highcharts.theme = {
    },
    title: {
       style: {
-         fontSize: '20px',
-         fontWeight: 'bold',
-         textTransform: 'uppercase'
+         fontSize: '18px',
+         fontWeight: '400',
              }
    },
    tooltip: {
@@ -40,7 +39,7 @@ Highcharts.theme = {
    },
    legend: {
       itemStyle: {
-         fontWeight: 'bold',
+         fontWeight: '400',
          fontSize: '13px'
       }
    },

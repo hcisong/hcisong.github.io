@@ -9,6 +9,9 @@ Highcharts.chart('bar_prices', {
       fontWeight: '400'
     }
   },
+  exporting: {
+    enabled: false
+  },
   xAxis: [
     {
       categories: [

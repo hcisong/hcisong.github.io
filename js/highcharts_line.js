@@ -817,7 +817,7 @@ Highcharts.chart('line_basic', {
       visible: false,
       color: '#DEEDEE'
     }, {
-      name: 'Insgeamte Besucher',
+      name: 'Besucher (insgesamt)',
       data: [
         249322,
         216886,
@@ -882,7 +882,7 @@ Highcharts.chart('line_basic', {
       ],
       color: '#A6B9C4'
     }, {
-      name: 'Insgeamte Tourismus',
+      name: 'Tourismus (insgesamt)',
       data: [
         377585,
         376855,
@@ -965,5 +965,8 @@ Highcharts.chart('line_basic', {
         }
       }
     ]
+  },
+  exporting: {
+    enabled: false
   }
 });

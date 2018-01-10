@@ -1,10 +1,10 @@
 Highcharts.chart('tree_chart_5', {
-
   series: [
     {
       type: "treemap",
       layoutAlgorithm: 'squarified',
       allowDrillToNode: true,
+      levelIsConstant: false,
       alternateStartingDirection: true,
       levels: [
         {
@@ -13,11 +13,7 @@ Highcharts.chart('tree_chart_5', {
           dataLabels: {
             enabled: true,
             align: 'left',
-            verticalAlign: 'top',
-            style: {
-              fontSize: '15px',
-              fontWeight: '400'
-            }
+            verticalAlign: 'top'
           }
         }
       ],
@@ -616,5 +612,8 @@ Highcharts.chart('tree_chart_5', {
         }
       }
     }
+  },
+  exporting: {
+    enabled: false
   }
 });
