@@ -4,10 +4,14 @@ Highcharts.chart('bar_basic', {
     height: 500
   },
   title: {
-    text: 'Besucheranzahl von 11 Mussen nach Monate'
+    text: 'Besucheranzahl von jedem Museum',
+    style: {
+      fontSize: '18px',
+      fontWeight: '400'
+    }
   },
   subtitle: {
-    text: 'Klick die untere Kreises, um der Monat zu wechseln.'
+    text: 'Klicken Sie die Legende, um das Museum zu wechseln.'
   },
   xAxis: {
     categories: [

@@ -4,10 +4,14 @@ Highcharts.chart('bar_science', {
       height: 500
     },
     title: {
-      text: 'Besucherzahl von MUSEEN (über die Wisseschaft)'
+      text: 'Besucherzahl von MUSEEN (über die Wissenschaft)',
+      style: {
+        fontSize: '18px',
+        fontWeight: '400'
+      }
     },
     subtitle: {
-      text: 'Klick die untere Kreises, um der Monat zu wechseln.'
+      text: 'Klicken Sie die Legende, um das Museum zu wechseln.'
     },
     xAxis: {
       categories: [

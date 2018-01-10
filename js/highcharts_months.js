@@ -3,7 +3,11 @@ Highcharts.chart('bar_months', {
     type: 'spline'
   },
   title: {
-    text: 'Besucheranzahl von jedem Museum'
+    text: 'Besucheranzahl von jedem Museum',
+    style: {
+      fontSize: '18px',
+      fontWeight: '400'
+    }
   },
   subtitle: {
     text: 'Klicken die Legende, um die Museum zu wechseln.'

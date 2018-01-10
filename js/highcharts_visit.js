@@ -4,10 +4,14 @@ Highcharts.chart('bar_visit', {
     height: 500
   },
   title: {
-    text: 'Besucheranzahl von jedem Museum'
+    text: 'Besucheranzahl von jedem Museum',
+    style: {
+      fontSize: '18px',
+      fontWeight: '400'
+    }
   },
   subtitle: {
-    text: 'Klicken die Legende, um die Museum zu wechseln.'
+    text: 'Klicken Sie die Legende, um die Museum zu wechseln.'
   },
   xAxis: {
     categories: [

@@ -4,10 +4,14 @@ Highcharts.chart('bar_art', {
     height: 500
   },
   title: {
-    text: 'Besucherzahl von MUSEEN (über die Kunst)'
+    text: 'Besucherzahl von MUSEEN (über die Kunst)',
+    style: {
+      fontSize: '18px',
+      fontWeight: '400'
+    }
   },
   subtitle: {
-    text: 'Klick die untere Kreises, um der Monat zu wechseln.'
+    text: 'Klicken Sie die Legende, um das Museum zu wechseln.'
   },
   xAxis: {
     categories: [

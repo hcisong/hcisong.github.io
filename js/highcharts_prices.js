@@ -3,7 +3,11 @@ Highcharts.chart('bar_prices', {
     zoomType: 'xy'
   },
   title: {
-    text: 'Eintrittspreis und Besuchsdauer'
+    text: 'Eintrittspreis und Besuchsdauer',
+    style: {
+      fontSize: '18px',
+      fontWeight: '400'
+    }
   },
   xAxis: [
     {

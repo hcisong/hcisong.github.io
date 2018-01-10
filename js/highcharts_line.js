@@ -2,19 +2,17 @@ Highcharts.chart('line_basic', {
   chart: {
     zoomType: 'x',
     height: 500
-
   },
-
   title: {
-    text: 'Besucheranzahl von 2012 bis 2016'
+    text: 'Besucheranzahl von 2012 bis 2016',
+    style: {
+      fontSize: '18px',
+      fontWeight: '400'
+    }
   },
-
   subtitle: {
-    text: 'Source: https://www.opengov-muenchen.de/dataset/monatszahlen-museen' + document.ontouchstart === undefined
-      ? 'Click and drag in the plot area to zoom in'
-      : 'Klick und zieh das Diagramm, um es zu vergrößern.'
+    text: 'Klicken Sie und ziehen Sie das Diagramm, um es zu vergrößern.'
   },
-
   yAxis: {
     title: {
       text: 'Monatszahlen Museen'
@@ -968,5 +966,4 @@ Highcharts.chart('line_basic', {
       }
     ]
   }
-
 });
