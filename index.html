@@ -1,245 +1,53 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>Museen in München</title>
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
-    <link rel="icon" href="favicon.ico" type="image/x-icon" />
-    <script type="text/javascript" src="vendors/jquery-3.2.1.min.js"></script>
-    <script type="text/javascript" src="vendors/ajax-jquery.min.js"></script>
-    <script src="vendors/jquery.easings.min.js"></script>
-    <script type="text/javascript" src="vendors/scrolloverflow.min.js"></script>
-    <script type="text/javascript" src="vendors/jquery.fullpage.js"></script>
-    <script src="vendors/bootstrap.min.js"></script>
-    <script src="vendors/d3.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="vendors/jquery.fullpage.css" />
-    <script src="https://code.highcharts.com/highcharts.js"></script>
-    <script src="https://code.highcharts.com/modules/heatmap.js"></script>
-    <script src="https://code.highcharts.com/modules/treemap.js"></script>
-    <script src="https://code.highcharts.com/modules/series-label.js"></script>
-    <script src="https://code.highcharts.com/modules/exporting.js"></script>
-    <link href=
-     "https://fonts.googleapis.com/css?family=Dosis:300, 400" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,700" rel="stylesheet">
-    <link rel="stylesheet" href="build/style.css">
-  </head>
-  <body>
-    <div id="menu">
-      <div class="grid-content container">
-        <div class="row">
-          <div class="logo-name">
-            <a href="">
-              <img src="img/logo.svg" class="" alt="">
-              <p>Museen in München</p>
-            </a>
-          </div>
-          <nav class="main-nav" role="navigation">
-            <div class="main-nav-header">
-              <button type="button" class="main-nav-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                <span class= a"icon-bar"></span>
-              </button>
-            </div>
-            <div id="navbar" class="collapse navbar-collapse">
-              <ul class="nav navbar-nav">
-                <li data-menuanchor="more_infos" class="">
-                  <a href="#more_infos">Mehr Infos</a>
-                </li>
-                <li data-menuanchor="when_should_i_go" class="">
-                  <a href="#when_should_i_go">Jede Museusm</a>
-                </li>
-                <li data-menuanchor="which_should_i_go" class="">
-                  <a href="#which_should_i_go">Jede Monate</a>
-                </li>
-                <li data-menuanchor="five_years" class="active">
-                  <a href="#five_years">Letzte fünf Jahre</a>
-                </li>
-                <li data-menuanchor="overview">
-                  <a href="#overview">Overview</a>
-                </li>
-              </ul>
-            </div>
-          </nav>
-        </div>
+---
+layout: default
+---
+<!-- <div class="row">
+  <div class="logo col-6">
+
+    <img class="mylogo" src="assets/img/song-logo.svg">
+    <span>Xuesong Zhang</span>
+  </div>
+</div> -->
+<div class="home">
+  <div class="intro">
+    <div class="row">
+      <div class="intro-text offset-2 col-3">
+        <img class="text-left-img" src="/assets/img/song-blue.jpg">
+      </div>
+      <div class="intro-text col-5">
+
+        <h2>Hi, this is Song (Xuesong Zhang) / 张雪松.</h2>
+
+        <p>I am a PhD candidate in the team <a href="https://aria.cs.kuleuven.be/">Artificial Realities and Interactive Ambients (ARIA)</a> in the Department of Computer Science at <a href="https://www.kuleuven.be/english/">KU Leuven</a>, and supervised by <a href="https://www.adalsimeone.me/">Adalberto L. Simeone</a>.</p>
+
+        <p>My research topic is <i>Immersive Virtual Reality Evaluations</i>.</p>
+
+        <p>I'm passionate about designing and implementing different interactive mixed reality systems, eye tracking, information visualisation as well as the evaluation of various technologies.</p>
+
+        <p>Interested in <a href="/projects.html">my projects</a>? Want collaboration? Feel free to contact me: <a href="mailto:xuesong.zhang@kuleuven.be">xuesong.zhang@kuleuven.be</a></p>
       </div>
     </div>
-    <div id="fullpage" class="">
-      <div class="section" id="firstPage">
-        <div class="carousel">
-          <ul class="img-list">
-            <li class="active">
-              <div id="tree_chart_1" class="tree_chart"></div>
-            </li>
-            <li>
-              <div id="tree_chart_2" class="tree_chart"></div>
-            </li>
-            <li>
-              <div id="tree_chart_3" class="tree_chart"></div>
-            </li>
-            <li>
-              <div id="tree_chart_4" class="tree_chart"></div>
-            </li>
-            <li>
-              <div id="tree_chart_5" class="tree_chart"></div>
-            </li>
-          </ul>
-          <div class="control-button">
-            <div id="left">
-              <img src="img/angle-left.svg" alt="">
-            </div>
-            <div id="right">
-              <img src="img/angle-right.svg" alt="">
-            </div>
-          </div>
-        </div>
-        <div class="firstPage_content">
-          <div class="container">
-            <h1>Museen in München</h1>
-            <p>Hier können Sie die monatliche Besucheranzahl von 11 Museum im Zeitraum von 2012 und 2016 entdecken.</p>
-            <p>Datenquelle:
-              <a href="https://www.opengov-muenchen.de/dataset/monatszahlen-museen">muenchen.de</a>
-            </p>
-            <div class="firstpage_nav">
-              <p>
-                <a href="#five_years">LETZTE FÜNF JAHRE</a>
-                <span>In diesem Bereich können Sie einen Ausblick von dem Anzahlsverlauf in den letzten fünf Jahren sehen.</span>
-              </p>
-              <p>
-                <a href="#which_should_i_go">JEDER MONATE</a>
-                <span>Sie haben nur in bestimmten Monaten Zeit, aber wissen noch nicht welche Museum Sie gehen kann? Dann benutzen Sie diesen Bereich.</span>
-              </p>
-              <p>
-                <a href="#when_should_i_go">JEDES MUSEUM</a>
-                <span>Sie würden gerne ein bestimmtes Museum besuchen, aber wissen nicht, wann Sie gehen sollen? Schauen Sie hier, vielleicht können Sie etwas finden!</span>
-              </p>
-              <p>
-                <a href="#more_infos">MEHR INFOS</a>
-                <span>Hier gibt es noch ein paar zusätzliche Informationen: Eintrittspreis und die gemittelte Besucherdauer.</span>
-              </p>
-            </div>
-          </div>
-        </div>
+    <!-- <div class="intro-title offset-1 col-8"> -->
+      <!-- <img class="mylogo" src="assets/img/song-logo.svg"> -->
 
-      </div>
-      <div class="section" id="secondPage">
-        <div class="container">
-          <div class="row">
-            <h2>
-              "Werden die Besucherzahl der Museen von der Tourismusanzahl beeinflusst?"
-            </h2>
-            <div id="line_basic">
-            </div>
-            <div class="secondPage_content">
-              <p>
-                Hier können Sie Ihre Hypothese prüfen. Sie können auf die Legende klicken, um mehr Informationen anzuzeigen.
-              </p>
-              <p>
-                Die insgesamte Besucherzahl der Museen hat einen ähnlichen Verlauf wie der insgesamte Tourismus in München. Besonders gut ersichtlich ist, dass je mehr Touristen in  München sind, desto mehr Besucher kann das Deutsche Museum - Museuminsel aufweisen.
-              </p>
-              <p>
-                Interagieren Sie mit dem Diagramm und entdecken Sie mehr.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="section" id="thirdPage">
-        <div class="container">
-          <div class="row">
-            <h2>
-              "Welches Museum soll ich in einem bestimmten Monat besuchen?"
-            </h2>
-            <div id="bar_basic">
-            </div>
-            <div id="bar_science">
-            </div>
-            <div id="bar_art">
-            </div>
-            <div class="thirdPage_content">
-              <div class="museen_catalog">
-                <div class="">
-                  <button type="button" name="all">Alle 11 Museen</button>
-                  <button type="button" name="science">Über die Wisseschaft</button>
-                  <button type="button" name="art">Über die Kunst</button>
-                </div>
-              </div>
-              <p>
-                Hier können Sie Museen nach dem Typ sortieren.
-              </p>
-              <p>
-                Sie würden am Januar München besuchen? <br>Wählen Sie den entsprechenden Monat aus, finden Sie das beliebteste Museum (höchste Besucheranzahl) aus, oder ein ruhiges Museum (geringe Besucherzahl) aus. Genießen Sie die Zeit.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="section" id="fourthPage">
-        <div class="container">
-          <div class="row">
-            <h2>
-              "Im welchen Monat soll ich ein bestimmtes Museum besuchen?"
-            </h2>
-            <div id="bar_months">
-            </div>
-          </div>
-          <div class="fourthPage_content">
-            <p>
-              Sie möchten ein bestimmtes Museum unbedingt besuchen? Suchen Sie jetzt eine für Sie passende Zeit?
-            </p>
-            <p>
-              Wählen Sie das entsprechende Museum aus und finden Sie einen passenden Zeitpunkt.
-            </p>
-            <p>
-              Genießen Sie die Zeit.
-            </p>
-          </div>
+      <!-- <h1>Hi, I'm Song, <br></h1> -->
+      <!-- <h2>a developer &#xd7; designer in VR, Web, UX.</h2> -->
 
-        </div>
-      </div>
-      <div class="section" id="fifthPage">
-        <div class="container">
-          <div class="row">
-            <h2>
-              Zusätzliche Informationen
-            </h2>
-            <div id="bar_prices">
-            </div>
-            <div id="bar_visit">
-            </div>
-          </div>
-          <div class="fifthPage_content">
-            <p>
-              Hier gibt ein paar zusätzliche Informationen: der Eintrittspreis sowie der ermäßigte Preis und die Besuchsdauer. Bewegen Sie den Mauszeiger über das Diagramm, um mehr Informationen zu erhalten.
-            </p>
-            <p>
-              Datenquelle: <br><a href="www.pinakothek.de">Alte Pinakothek&emsp;Neue Pinakothek&emsp;Pinakothek der Moderne&emsp; Schackgalerie&emsp;Museum Brandhorst</a>&emsp;
-              <a href="http://www.lenbachhaus.de/">Städtische Galerie im Lenbachhaus</a>&emsp;
-              <a href="http://www.mmn-muenchen.de/">Museum Mensch und Natur</a>&emsp;
-              <a href="https://www.muenchner-stadtmuseum.de/">Münchner Stadtmuseum</a>&emsp;
-              <a href="http://www.deutsches-museum.de/">Deutsches Museum - Museumsinsel&emsp;Deutsches - Verkehrszentrum</a>&emsp;
-              <a href="http://www.bayerisches-nationalmuseum.de/">Bayerisches Nationalmuseum</a>&emsp;
-              <a href="https://www.google.de/">google.de </a>
-            </p>
-          </div>
-        </div>
-        <div id="impress">
-          <p>Informationsvisualisierung Projekt <br>
-          Kontakt: <a href="mailto:xuesong.zhang@campus.lmu.de">xuesong.zhang@campus.lmu.de</a></p>
-        </div>
-      </div>
-    </div>
-  </body>
-  <script src="js/theme_grid_light.js"></script>
-  <script src="js/highcharts_treemap.js"></script>
-  <script src="js/highcharts_treemap_2.js"></script>
-  <script src="js/highcharts_treemap_3.js"></script>
-  <script src="js/highcharts_treemap_4.js"></script>
-  <script src="js/highcharts_treemap_5.js"></script>
-  <script src="js/highcharts_line.js"></script>
-  <script src="js/highcharts_bar.js"></script>
-  <script src="js/highcharts_science.js"></script>
-  <script src="js/highcharts_art.js"></script>
-  <script src="js/highcharts_months.js"></script>
-  <script src="js/highcharts_prices.js"></script>
-  <script src="js/highcharts_visit.js"></script>
-  <script src="js/application.js"></script>
-</html>
+      <!-- <img class="col-6 mypic" src="assets/img/Song.jpg" alt=""> -->
+
+    <!-- </div> -->
+
+
+
+    <!-- <div class="intro-pic col-3">
+    </div> -->
+  </div>
+
+
+
+
+
+
+  <!-- <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p> -->
+
+</div>

@@ -1,0 +1,50 @@
+<footer class="site-footer">
+
+  <div class="container">
+
+    <!-- <h2 class="footer-heading">{{ site.title | escape }}</h2> -->
+
+    <div class="row">
+      <div class="col-7">
+        
+      </div>
+
+      <div class="col-3">
+        <ul class="social-media-list">
+          {% if site.github_username %}
+          <li>
+            {% include icon-github.html username=site.github_username %}
+          </li>
+          {% endif %}
+
+          {% if site.ins_username %}
+          <li>
+            {% include icon-ins.html username=site.ins_username %}
+          </li>
+          {% endif %}
+
+          <li>
+            {% include icon-linkedin.html username=site.linkedin_username %}
+          </li>
+        </ul>
+        <!-- <p>Social Media</p> -->
+        <ul class="contact-list">
+
+          {% if site.email %}
+          <li><a href="mailto:{{ site.email }}">{{ site.email }}</a></li>
+          {% endif %}
+          <!-- <div class="footer-col footer-col-3"> -->
+            <li>
+              {{ site.description | escape }}
+            </li>
+          <!-- </div> -->
+      </ul>
+        
+      </div>
+
+
+    </div>
+
+  </div>
+
+</footer>
