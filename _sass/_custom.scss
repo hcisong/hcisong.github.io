@@ -23,7 +23,7 @@ body {
         font-weight: $base-font-weight;
     }
     .home {
-        min-height: 75vh;
+        //min-height: 75vh;
     }
 }
 
@@ -44,8 +44,18 @@ body {
 
 }
 
+
+
 .site-nav {
     line-height: 55px;
+
+    @include media-query($on-palm) {
+        // position: absolute;
+
+        width: 100%;
+        // z-index: -1;
+
+    }
 }
 
 
@@ -61,10 +71,25 @@ body {
     color: white !important;
     background-color: $color-text-black;
     border: 1px solid $color-text-black;
+
     &:hover {
         background-color: white;
         color: $color-text-black !important;
         text-decoration: none;
+    }
+
+    @include media-query($on-palm) {
+        display: block;
+        //margin: 20px 0px 20px 10px;
+        margin: 10px 10px;
+        padding: 5px 20px;
+        line-height: 32px;
+        text-align: center;
+
+        &:first-of-type {
+            margin-top: 50px;
+        }
+
     }
 }
 
@@ -88,6 +113,7 @@ body {
     height: 45px;
     width: 45px;
     margin-top: -5px;
+    z-index: 1000;
 }
 
 .intro{
@@ -176,13 +202,42 @@ body {
 .intro-text {
     //margin-top: 50px;
     font-weight: 300;
+    
     .text-left-img {
         margin-top: 6px;
+        padding-top: 70px;
+
+        @media (min-width: 992px) { 
+            padding-top: 0;
+         }
     }
+
+    .intro-text-text {
+        padding-top: 20px;
+
+        @media (min-width: 992px) { 
+            padding-top: 0;
+         }
+    }
+
     .round-edge {
         border-radius: 50%;
     }
+
+    // Small devices (landscape phones)
+   // @media (min-width: 576px) { ... }
+
+    // Medium devices (tablets)
+   // @media (min-width: 768px) { ... }
+
+    // Large devices (desktops)
+    
+
+    // Extra large devices (large desktops)
+   // @media (min-width: 1200px) { ... }
 }
+
+
 
 .icon--ins,
 .icon--linkedin {
