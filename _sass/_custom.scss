@@ -293,6 +293,22 @@ body {
     }
 }
 
+.frequencyCat {
+    margin-top: 100px;
+    .fcat-title {
+        font-size: $h2-font-size;
+        font-weight: 300;
+
+        img{
+            width: 100%;
+        }
+    }
+    .fcat-desc {
+        margin-top: 50px;
+        font-size: $base-font-size;
+        font-weight: 300;
+    }
+}
 // .unis-pic:hover {
 //   + .uni-desc {
 //     display: block;

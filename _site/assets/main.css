@@ -348,6 +348,14 @@ body p { font-size: 1em; font-weight: 300; }
 
 .about .about-desc { margin-top: 50px; font-size: 1em; font-weight: 300; }
 
+.frequencyCat { margin-top: 100px; }
+
+.frequencyCat .fcat-title { font-size: 1.3em; font-weight: 300; }
+
+.frequencyCat .fcat-title img { width: 100%; }
+
+.frequencyCat .fcat-desc { margin-top: 50px; font-size: 1em; font-weight: 300; }
+
 .edu { margin-top: 100px; }
 
 .site-footer { margin-top: 50px; font-size: 1em; }
