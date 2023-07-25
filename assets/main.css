@@ -324,9 +324,13 @@ body p { font-size: 1em; font-weight: 300; }
 
 @media (min-width: 992px) { .intro-text .text-left-img { padding-top: 0; } }
 
-.intro-text .intro-text-text { padding-top: 20px; }
+.intro-text .intro-text-text { padding-top: 20px; font-size: 1em; }
 
 @media (min-width: 992px) { .intro-text .intro-text-text { padding-top: 0; } }
+
+.intro-text .intro-text-text .btn { font-weight: 300; background-color: white; color: #1d1d1b !important; border: 1px solid #1d1d1b; border-radius: 0; }
+
+.intro-text .intro-text-text .btn:hover { color: white !important; background-color: #1d1d1b; text-decoration: none; }
 
 .intro-text .round-edge { border-radius: 50%; }
 
