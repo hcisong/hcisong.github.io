@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+        <title>Test GLB</title>
+
+        <!-- Babylon.js -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/dat-gui/0.6.2/dat.gui.min.js"></script>
+        <script src="https://assets.babylonjs.com/generated/Assets.js"></script>
+        <script src="https://preview.babylonjs.com/ammo.js"></script>
+        <script src="https://preview.babylonjs.com/cannon.js"></script>
+        <script src="https://preview.babylonjs.com/Oimo.js"></script>
+        <script src="https://preview.babylonjs.com/earcut.min.js"></script>
+        <script src="https://preview.babylonjs.com/babylon.js"></script>
+        <script src="https://preview.babylonjs.com/materialsLibrary/babylonjs.materials.min.js"></script>
+        <script src="https://preview.babylonjs.com/proceduralTexturesLibrary/babylonjs.proceduralTextures.min.js"></script>
+        <script src="https://preview.babylonjs.com/postProcessesLibrary/babylonjs.postProcess.min.js"></script>
+        <script src="https://preview.babylonjs.com/loaders/babylonjs.loaders.js"></script>
+        <script src="https://preview.babylonjs.com/serializers/babylonjs.serializers.min.js"></script>
+        <script src="https://preview.babylonjs.com/gui/babylon.gui.min.js"></script>
+        <script src="https://preview.babylonjs.com/inspector/babylon.inspector.bundle.js"></script>
+
+        <style>
+            html, body {
+                overflow: hidden;
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+
+            #renderCanvas {
+                width: 100%;
+                height: 100%;
+                touch-action: none;
+            }
+        </style>
+    </head>
+<body>
+    <canvas id="renderCanvas"></canvas>
+    <script>
+        var canvas = document.getElementById("renderCanvas");
+
+        var startRenderLoop = function (engine, canvas) {
+            engine.runRenderLoop(function () {
+                if (sceneToRender && sceneToRender.activeCamera) {
+                    sceneToRender.render();
+                }
+            });
+        }
+
+        var engine = null;
+        var scene = null;
+        var sceneToRender = null;
+        var createDefaultEngine = function() { return new BABYLON.Engine(canvas, true, { preserveDrawingBuffer: true, stencil: true,  disableWebGL2Support: false}); };
+
+        var createScene = async function () {
+            // Create scene
+        	var scene = new BABYLON.Scene(engine);
+            const scale = 0.015;
+
+            var camera = new BABYLON.FreeCamera("camera1", new BABYLON.Vector3(0, 1, -0.2), scene);
+            camera.setTarget(BABYLON.Vector3.Zero());
+            camera.attachControl(canvas, true);
+
+            //const light = new BABYLON.HemisphericLight("light1", new BABYLON.Vector3(0, -1, 1), scene);
+            var dLight  = new BABYLON.DirectionalLight("dLight", new BABYLON.Vector3(0, -10, 0), scene);
+            // dLight.position = new BABYLON.Vector3(1, -1, -30);
+
+
+            var ambientLight = new BABYLON.HemisphericLight("ambientLight", new BABYLON.Vector3(0, 15, 0), scene);
+            ambientLight.intensity = 0.3;
+
+            dLight.position = new BABYLON.Vector3(-10, 15, -30);
+
+            dLight.intensity = 1;
+            dLight.shadowEnabled = true;
+
+            dLight.shadowMinZ = 1; // Set minimum z value for shadow calculation
+            dLight.shadowMaxZ = 100; // Set maximum z value for shadow calculation
+            dLight.shadowDarkness = 0.5; // Darkness of the shadow, default is 0. (Also called diffuse)
+            dLight.shadowMapSize = new BABYLON.Size(2048, 2048); 
+            dLight.shadowPCF = true;
+            dLight.shadowIntensity = 0.5;
+
+            // Default Environment
+            var environment = scene.createDefaultEnvironment({ enableGroundShadow: true, groundYBias: 2.8 });
+            environment.setMainColor(BABYLON.Color3.FromHexString("#BFBFBF"))
+            //environment.setMainColor(BABYLON.Color3.FromHexString("#fff"))
+            environment.ground.parent.position.y = 0;
+            environment.ground.position.y = -0.01;
+
+            const shadowGenerator = new BABYLON.ShadowGenerator(2048, dLight);
+            shadowGenerator.useBlurExponentialShadowMap = true;
+            shadowGenerator.blurKernel = 32;
+            shadowGenerator.bias = 0.001;
+            shadowGenerator.normalBias = 0.0001;
+            shadowGenerator.usePercentageCloserFiltering = true;
+            //shadowGenerator.filteringQuality = 2;
+            shadowGenerator.usePoissonSampling = true;  
+            shadowGenerator.useVarianceShadowMap = true;
+            
+            shadowGenerator.setDarkness(0.3);
+            shadowGenerator.useContactHardeningShadow = true;
+            shadowGenerator.contactHardeningLightSizeU = 0.1;
+            shadowGenerator.contactHardeningLightSizeV = 0.1;
+
+
+            // var environment = scene.createDefaultEnvironment({ enableGroundShadow: true });
+            // environment.setMainColor(BABYLON.Color3.FromHexString("#74b9ff"));
+            
+
+
+            //scene.useRightHandedSystem = true;
+
+            // Enable VR
+            //var vrHelper = scene.createDefaultVRExperience({createDeviceOrientationCamera:false, useXR: true});
+            // vrHelper.enableTeleportation({floorMeshes: [environment.ground]});
+
+
+
+            
+
+
+            const cube = BABYLON.MeshBuilder.CreateBox("cube", { size: 0.2 }, scene);
+            cube.position = new BABYLON.Vector3(0.7, 1, 0.3);
+            cube.name = "nextPageCube";
+
+            const cubeMaterial = new BABYLON.StandardMaterial("cubeMaterial", scene);
+            cubeMaterial.diffuseColor = new BABYLON.Color3(1, 0.5, 1); 
+
+            cubeMaterial.environmentIntensity = 0;
+
+            cubeMaterial.metallic = 0;
+            cubeMaterial.roughness = 1;
+
+
+            var customShader = new BABYLON.ShaderMaterial("customShader", scene, {
+                vertex: "custom", // Vertex shader code
+                fragment: "custom" // Fragment shader code
+                },
+                {
+                attributes: ["position", "normal", "uv"],
+                uniforms: ["world", "worldView", "worldViewProjection", "view", "projection"]
+            });
+
+            cube.material = customShader;
+
+
+            // const cube = BABYLON.MeshBuilder.CreateBox("cube", { size: 0.2 }, scene);
+            //cube.material = cubeMaterial;
+            // var material = new BABYLON.StandardMaterial("cubeMaterial", scene);
+            // material.diffuseColor = new BABYLON.Color3(0.5, 0.5, 0.5);
+            cube.receiveShadows = true;
+
+            cube.material = cubeMaterial;
+
+
+
+
+            shadowGenerator.getShadowMap().renderList.push(cube);
+            cube.receiveShadows = true;
+
+
+            let tableMesh; 
+            let lampMesh; 
+
+           
+
+            
+            // var tableMeshPromise = new Promise(function(resolve, reject) {
+
+            //     BABYLON.SceneLoader.Append("./lamp/", "lampLFnew.glb", scene, function (tableScene) {
+
+            //     //var table= BABYLON.SceneLoader.Append("./", "table.glb", scene, function (tableScene) {     
+
+            //         tableScene.createDefaultCameraOrLight(true, false, true); 
+            //         tableMesh = tableScene.getMeshByName("lamp-lf");
+            //         tableMesh.position = new BABYLON.Vector3(0.25, 0.75, 0);
+
+                    
+
+            //         resolve(tableMesh);
+            //     });
+
+            // });
+
+            // tableMeshPromise.then(function(tableMesh) {
+            //     tableMesh = tableMesh;
+            //     tableMesh.receiveShadows = true;
+
+            //     // shadowGenerator.getShadowMap().renderList.push(tableMesh);
+            //     // shadowGenerator.addShadowCaster(tableMesh, true);
+
+
+            // }).catch(function(error) {
+            //     console.error("An error occurred:", error);
+            // }).then(function() {
+            //     // tableMesh.receiveShadows = true;
+            //     // shadowGenerator.addShadowCaster(tableMesh);
+            // });
+
+
+
+        
+
+
+            
+
+            
+
+
+            var buttonMeshPromise = new Promise(function(resolve, reject) {
+
+                BABYLON.SceneLoader.Append("./button/", "button-hf.glb", scene, function (buttonScene) {
+
+                    buttonScene.createDefaultCameraOrLight(true, false, true); 
+                    buttonMesh = buttonScene.getMeshByName("button-hf");
+                    buttonMesh.position = new BABYLON.Vector3(-0.25, 0.753, 0);
+
+                    resolve(buttonMesh);
+                });
+            });
+
+            // function getLamp() {
+            //     lampMeshPromise.then(function(lampMesh) {
+            //         // Access the tableMesh variable here
+            //         lampMesh = lampMesh;
+            //         console.log("bottel changed");
+            //     }).catch(function(error) {
+            //         console.error("An error occurred:", error);
+            //     });
+            // }
+
+            buttonMeshPromise.then(function(buttonMesh) {
+                // Access the tableMesh variable here
+                buttonMesh = buttonMesh;
+                buttonMesh.name = "button";
+                shadowGenerator.addShadowCaster(buttonMesh, true);
+
+                buttonMesh.receiveShadows = true;
+
+                //console.log("bottel changed");
+            }).catch(function(error) {
+                console.error("An error occurred:", error);
+            });
+
+
+        
+            
+
+            const presentCube = BABYLON.MeshBuilder.CreateBox("cube", { size: 0.75 }, scene);
+            presentCube.position = new BABYLON.Vector3(0, 0.37, 0.25);
+
+            const cubeMaterial2 = new BABYLON.StandardMaterial("cubeMaterial", scene);
+            // cubeMaterial2.diffuseColor = new BABYLON.Color3(0.5, 0.5, 0); 
+            // cubeMaterial2.diffuseColor = new BABYLON.Color3(0.9, 0.9, 0.2);
+            cubeMaterial2.diffuseColor = BABYLON.Color3.FromHexString("#CCCCB2");
+            
+
+            cubeMaterial2.environmentIntensity = 0;
+
+            cubeMaterial2.metallic = 0;
+            cubeMaterial2.roughness = 1;
+            
+
+            presentCube.name = "presentCube";
+            presentCube.receiveShadows = true;
+
+            presentCube.material = customShader;
+
+            presentCube.material = cubeMaterial2;
+          
+            
+
+            // dLight.shadowEnabled = true;
+
+
+            
+
+            
+
+
+            function changeMeshPosition(mesh, destination) {
+                mesh.position = destination;
+                console.log("Mesh position changed to:", destination);
+            }
+
+
+            
+
+            // const newMaterial = new BABYLON.StandardMaterial('newMaterial', scene);
+            // newMaterial.diffuseColor = new BABYLON.Color3(1, 0, 0); 
+
+            const pointerToKey = new Map();
+
+            scene.onPointerObservable.add((pointerInfo) => {
+                switch (pointerInfo.type) {
+                    case BABYLON.PointerEventTypes.POINTERDOWN:
+                        // Only take action if the pointer is down on a mesh
+                        if(pointerInfo.pickInfo.hit) {
+                            let pickedMesh = pointerInfo.pickInfo.pickedMesh;
+                            let pointerId = pointerInfo.event.pointerId;
+                            if (pickedMesh.name === "nextPageCube") {
+                                //camera.exitVR();
+                                window.location.href = "./questionnaire.html"
+
+                                // window.location.href = "https://forms.office.com/e/NL0BJAAEVX "
+                            }
+
+
+                            var initialRotation = buttonMesh.rotationQuaternion.clone();
+
+                            if(pickedMesh.name === "button") {
+                                //pickedMesh.position.y -= 0.5; // Move the key downward
+                                let additionalRotation = BABYLON.Quaternion.RotationAxis(new BABYLON.Vector3(0, 1, 0), -Math.PI / 4);
+                                buttonMesh.rotationQuaternion = initialRotation.clone().multiply(additionalRotation);
+                            }
+                            
+                        }
+                        break;
+                    case BABYLON.PointerEventTypes.POINTERUP:
+                        let pointerId = pointerInfo.event.pointerId;
+                        // Only take action if the released pointer was recorded in pointerToKey
+                        if (pointerToKey.has(pointerId)) {
+                            pointerToKey.get(pointerId).mesh.position.y += 0.5; // Move the key upward
+                            pointerToKey.get(pointerId).note.stop(); // Stop the sound of the note
+                            pointerToKey.delete(pointerId);
+                        }
+                        break;
+                }
+            });
+
+            const xrHelper = await scene.createDefaultXRExperienceAsync();
+
+            const featuresManager = xrHelper.baseExperience.featuresManager;
+
+            featuresManager.enableFeature(BABYLON.WebXRFeatureName.POINTER_SELECTION, "stable", {
+                xrInput: xrHelper.input,
+                enablePointerSelectionOnAllControllers: true        
+            });
+
+            const ground = BABYLON.MeshBuilder.CreateGround("ground", {width: 400, height: 401});
+            ground.receiveShadows = true;
+
+            
+        	return scene;
+        };
+
+        window.initFunction = async function() {
+                     
+            var asyncEngineCreation = async function() {
+                try {
+                    return createDefaultEngine();
+                } catch(e) {
+                    console.log("the available createEngine function failed. Creating the default engine instead");
+                    return createDefaultEngine();
+                }
+            }
+
+            window.engine = await asyncEngineCreation();
+            if (!engine) throw 'engine should not be null.';
+            startRenderLoop(engine, canvas);
+            window.scene = createScene();};
+            initFunction().then(() => {scene.then(returnedScene => { sceneToRender = returnedScene; });
+                            
+        });
+
+        // Resize
+        window.addEventListener("resize", function () {
+            engine.resize();
+        });
+
+
+        
+        
+
+
+        // window.initFunction = async function() {
+              
+        //     var asyncEngineCreation = async function() {
+        //         try {
+        //         return createDefaultEngine();
+        //         } catch(e) {
+        //         console.log("the available createEngine function failed. Creating the default engine instead");
+        //         return createDefaultEngine();
+        //         }
+        //     }
+
+        //     window.engine = await asyncEngineCreation();
+        // if (!engine) throw 'engine should not be null.';
+        //     startRenderLoop(engine, canvas);
+        //     window.scene = createScene();};
+        //     initFunction().then(() => {sceneToRender = scene                    
+        // });
+
+        // // Resize
+        // window.addEventListener("resize", function () {
+        //     engine.resize();
+        // });
+    </script>
+</body>
+</html>
