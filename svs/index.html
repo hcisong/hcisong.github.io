@@ -1,171 +1,367 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
-        <title>SVS</title>
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <title>SVS</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+
+
         
+    <style>
+        html,
+        body {
+            /* overflow: hidden; */
+            width: 100%;
+            min-height: 100%;
+            margin: 0;
+            padding: 0;
+        }
 
-        <style>
-            html, body {
-                overflow: hidden;
+        .des-title {
+            margin-top: 30px;
+            font-size: 50px;
+            font-weight: bold;
+        }
+
+        .des-text {
+            text-align: left;
+            margin-top: 20px;
+        }
+
+        #copyButton {
+            display: none;
+        }
+
+        #btnGroups {
+            display: none;
+        }
+
+        .btnGroup {
+            margin-top: 10px;
+            text-align: center;
+            float: left;
+
+            button {
                 width: 100%;
-                height: 100%;
-                margin: 0;
-                padding: 0;
+            }
+        }
+
+        .contentBtn {
+            font-weight: 300;
+            line-height: 35px;
+            background-color: white;
+            color: #1d1d1b !important;
+            width: 100%;
+
+            border: 1px solid #1d1d1b;
+            border-radius: 0;
+
+            &:hover {
+                color: white !important;
+                background-color: #1d1d1b;
+                text-decoration: none;
             }
 
-            #renderCanvas {
-                width: 100%;
-                height: 100%;
-                touch-action: none;
+            &:last-child {
+                margin-bottom: 20px;
             }
-            .des-title{
-                margin-top: 20%;
-                font-size: 50px;
-                font-weight: bold;
-            }
-            .des-text {
-                text-align: left;
-            }
-            .btn-row {
-                margin-top: 10px;
-            }
+        }
 
-        </style>
-    </head>
+        #generatedCode {
+            background-color: rgba(207, 206, 206, 0.769);
+            line-height: 35px;
+        }
+
+        #demoForm {
+            display: none;
+        }
+
+        #finishDemoButton {
+            display: none;
+        }
+
+        #infoMsg {
+            display: none;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+    </style>
+</head>
+
 <body>
     <div class="container text-center">
         <div class="row">
-          <div class="col-8 offset-2">
-            <div class="des-title">
-                <h1>Welcome to SVS user study!</h1>
-            </div>
-            <div class="des-text">
-                <p>
-                    Hi, thank you for participating in our user study. <br>
-                    In this study, you will be asked to observe serveral objects in a virtual environment. After each oberservation, you need to fill in a questionnaire. <br>
-                </p>
+            <div class="col-8 offset-2">
+                <div class="des-title">
+                    <h1>Welcome to SVS user study!</h1>
+                </div>
+                <div class="des-text">
+                    <p>
+                        Hi, thank you for participating in our user study. <br>
+                        In this study, you will be asked to observe serveral objects in a virtual environment. After
+                        each oberservation, you need to fill in a questionnaire. <br>
+                    </p>
+                </div>
             </div>
         </div>
-            <div class="row btn-row">
-                <div class="col-8 offset-2">
-                    <button type="button" class="col-2 btn btn-light">
-                        <a href="./model-lamp-1.html">lamp1</a>
-                    </button>
-    
-                    <button type="button" class="col-2 btn btn-light">
-                        <a href="./model-lamp-2.html">lamp2</a>
-                    </button>
-                    
-                    <button type="button" class="col-2 btn btn-light">
-                        <a href="./model-lamp-3.html">lamp3</a>
-                    </button>
-                    
-                    <button type="button" class="col-2 btn btn-light">
-                        <a href="./model-lamp-4.html">lamp4</a>
-                    </button>
+        <div class="row">
+            <div class="col-4 offset-4">
+
+                <p id="hintInfo">Please press the button to generate your ID.</p>
+
+                <button id="generateButton" class="contentBtn" onclick="handleGenerateClick()">Generate Code</button>
+
+                <div>
+
+                    <p id="generatedCode"></p>
+
+                    <button id="copyButton" class="contentBtn" onclick="handleCopyClick()">Copy</button>
                 </div>
             </div>
-            
-            <div class="row btn-row">
-                <div class="col-8 offset-2">
-                    <button type="button" class="col-2 btn btn-light">
-                        <a href="./model-button-1.html">button1</a>
-                    </button>
-    
-                    <button type="button" class="col-2 btn btn-light">
-                        <a href="./model-button-2.html">button2</a>
-                    </button>
-                    
-                    <button type="button" class="col-2 btn btn-light">
-                        <a href="./model-button-3.html">button3</a>
-                    </button>
-                    
-                    <button type="button" class="col-2 btn btn-light">
-                        <a href="./model-button-4.html">button4</a>
-                    </button>
-                </div>
+        </div>
+
+        <div class="row" id="infoMsg">
+            <p>
+                Please copy your ID and fill in the demographic questionnaire first. <br>
+                After you finish the questionnaire, please press the button below to start the user study.
+            </p>
+        </div>
+        
+        <div class="row" id="demoForm">
+            <iframe width="640px" height="480px" src="https://forms.office.com/Pages/ResponsePage.aspx?id=m1hzOUCetU6ADrC2OD0WIdsgzKp46jZItHHcee2MmZFURTEwOVpOMkFCTFNMWjZNMDRORlBUWFVKQS4u&embed=true" frameborder="0" marginwidth="0" marginheight="0" style="border: none; max-width:100%; max-height:100vh" allowfullscreen webkitallowfullscreen mozallowfullscreen msallowfullscreen> </iframe>
+        </div>
+
+        <div class="row btn-row">
+            <div class="col-8 offset-2">
+                <button id="finishDemoButton" class="contentBtn" onclick="handleFinishDemoClick()">I confirm I have already fisished the demographic questionnaire and submit it.</button>
+
             </div>
-            <div class="row btn-row">
-                <div class="col-8 offset-2">
-                    <button type="button" class="col-2 btn btn-light">
-                        <a href="./model-bottle-1.html">bottle1</a>
+        </div>
+
+        <div class="row">
+            <div class="col-8 offset-2" id="btnGroups">
+                <div class="col-2 btnGroup">
+                    <button type="button" class="btn btn-light">
+                        <a href="./model-lamp-1.html" target="_blank">lamp1</a>
                     </button>
-                    <button type="button" class="col-2 btn btn-light">
-                        <a href="./model-bottle-2.html">bottle2</a>
+                    <button type="button" class=" btn btn-light">
+                        <a href="./model-lamp-2.html" target="_blank">lamp2</a>
                     </button>
-                    <button type="button" class="col-2 btn btn-light">
-                        <a href="./model-bottle-3.html">bottle3</a>
+                    <button type="button" class="btn btn-light">
+                        <a href="./model-lamp-3.html" target="_blank">lamp3</a>
                     </button>
-                    <button type="button" class="col-2 btn btn-light">
-                        <a href="./model-bottle-4.html">bottle4</a>
-                    </button>
-                </div>
-            </div>
-            <div class="row btn-row">
-                <div class="col-8 offset-2">
-                    <button type="button" class="col-2 btn btn-light">
-                        <a href="./model-mic-1.html">mic1</a>
-                    </button>
-                    <button type="button" class="col-2 btn btn-light">
-                        <a href="./model-mic-2.html">mic2</a>
-                    </button>
-                    <button type="button" class="col-2 btn btn-light">
-                        <a href="./model-mic-3.html">mic3</a>
-                    </button>
-                    <button type="button" class="col-2 btn btn-light">
-                        <a href="./model-mic-4.html">mic4</a>
+                    <button type="button" class="btn btn-light" target="_blank">
+                        <a href="./model-lamp-4.html" target="_blank">lamp4</a>
                     </button>
                 </div>
-            </div>
-            <div class="row btn-row">
-                <div class="col-8 offset-2">
-                    <button type="button" class="col-2 btn btn-light">
-                        <a href="./model-switch-1.html">switch1</a>
+                <div class="col-2 btnGroup">
+                    <button type="button" class="btn btn-light">
+                        <a href="./model-button-1.html" target="_blank">button1</a>
                     </button>
-                    <button type="button" class="col-2 btn btn-light">
-                        <a href="./model-switch-2.html">switch2</a>
+                    <button type="button" class="btn btn-light">
+                        <a href="./model-button-2.html" target="_blank">button2</a>
                     </button>
-                    <button type="button" class="col-2 btn btn-light">
-                        <a href="./model-switch-3.html">switch3</a>
+                    <button type="button" class="btn btn-light">
+                        <a href="./model-button-3.html" target="_blank">button3</a>
                     </button>
-                    <button type="button" class="col-2 btn btn-light">
-                        <a href="./model-switch-4.html">switch4</a>
+                    <button type="button" class="btn btn-light">
+                        <a href="./model-button-4.html" target="_blank">button4</a>
                     </button>
                 </div>
-            </div>
-            <div class="row btn-row">
-                <div class="col-8 offset-2">
-                    <button type="button" class="col-2 btn btn-light">
-                        <a href="./model-joycon-1.html">joycon1</a>
+                <div class="col-2 btnGroup">
+                    <button type="button" class="btn btn-light">
+                        <a href="./model-bottle-1.html" target="_blank">bottle1</a>
                     </button>
-                    <button type="button" class="col-2 btn btn-light">
-                        <a href="./model-joycon-2.html">joycon2</a>
+                    <button type="button" class="btn btn-light">
+                        <a href="./model-bottle-2.html" target="_blank">bottle2</a>
                     </button>
-                    <button type="button" class="col-2 btn btn-light">
-                        <a href="./model-joycon-3.html">joycon3</a>
+                    <button type="button" class="btn btn-light">
+                        <a href="./model-bottle-3.html" target="_blank">bottle3</a>
                     </button>
-                    <button type="button" class="col-2 btn btn-light">
-                        <a href="./model-joycon-4.html">joycon4</a>
+                    <button type="button" class="btn btn-light">
+                        <a href="./model-bottle-4.html" target="_blank">bottle4</a>
                     </button>
                 </div>
+                <div class="col-2 btnGroup">
+                    <button type="button" class="btn btn-light">
+                        <a href="./model-mic-1.html" target="_blank">mic1</a>
+                    </button>
+                    <button type="button" class="btn btn-light">
+                        <a href="./model-mic-2.html" target="_blank">mic2</a>
+                    </button>
+                    <button type="button" class="btn btn-light">
+                        <a href="./model-mic-3.html" target="_blank">mic3</a>
+                    </button>
+                    <button type="button" class="btn btn-light">
+                        <a href="./model-mic-4.html" target="_blank">mic4</a>
+                    </button>
+                </div>
+                <div class="col-2 btnGroup">
+                    <button type="button" class="btn btn-light">
+                        <a href="./model-switch-1.html" target="_blank">switch1</a>
+                    </button>
+                    <button type="button" class="btn btn-light">
+                        <a href="./model-switch-2.html" target="_blank">switch2</a>
+                    </button>
+                    <button type="button" class="btn btn-light">
+                        <a href="./model-switch-3.html" target="_blank">switch3</a>
+                    </button>
+                    <button type="button" class="btn btn-light">
+                        <a href="./model-switch-4.html" target="_blank">switch4</a>
+                    </button>
+                </div>
+                <div class="col-2 btnGroup">
+                    <button type="button" class="btn btn-light">
+
+                        <a href="./model-joycon-1.html" target="_blank">joycon1</a>
+                    </button>
+                    <button type="button" class="btn btn-light">
+                        <a href="./model-joycon-2.html" target="_blank">joycon2</a>
+                    </button>
+                    <button type="button" class="btn btn-light">
+
+                        <a href="./model-joycon-3.html" target="_blank">joycon3</a>
+                    </button>
+                    <button type="button" class="btn btn-light">
+
+                        <a href="./model-joycon-4.html" target="_blank">joycon4</a>
+                    </button>
+                </div>
+                <!-- </div> -->
+
             </div>
             <div class="row btn-row">
                 <div class="col-8 offset-2">
                 
                     <button type="button" class="col-2 btn btn-light">
-                        <a href="./questionnaire.html">questionnaire</a>
+                        <a href="./questionnaire.html" target="_blank">questionnaire</a>
                     </button>
 
                 </div>
             </div>
-          
-        </div>
-      </div>
+            
 
-    
-   
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/uuid@8.3.2/dist/umd/uuid.min.js"></script>
+
+    <script>
+        // Function to generate a UUID code
+        function generateUniqueID() {
+            return uuid.v4();
+        }
+
+        function handleGenerateClick() {
+            const generatedCode = generateUniqueID();
+            const generatedCodeElement = document.getElementById('generatedCode');
+            const hintInfoElement = document.getElementById('hintInfo');
+            generatedCodeElement.textContent = generatedCode;
+            hintInfoElement.textContent = "Your ID is: ";
+            // Show the copy button
+            const copyButton = document.getElementById('copyButton');
+            const btnGroupsBlock = document.getElementById('btnGroups');
+            const demoForm = document.getElementById('demoForm');
+            const finishDemoButton = document.getElementById('finishDemoButton');
+            copyButton.style.display = 'inline';
+            finishDemoButton.style.display = 'block';
+            demoForm.style.display = 'block';
+            document.getElementById('generateButton').style.display = 'none';
+            document.getElementById('infoMsg').style.display = 'inline';
+        }
+
+        function handleFinishDemoClick(){
+            const btnGroupsBlock = document.getElementById('btnGroups');
+            const demoForm = document.getElementById('demoForm');
+            const finishDemoButton = document.getElementById('finishDemoButton');
+            finishDemoButton.style.display = 'none';
+            demoForm.style.display = 'none';
+            btnGroupsBlock.style.display = 'block';
+            document.getElementById('infoMsg').textContent = "Please click the button and observe the model in VR to start the user study.";
+        }
+
+        function handleCopyClick() {
+            const generatedCodeElement = document.getElementById('generatedCode');
+            const codeToCopy = generatedCodeElement.textContent;
+            // Create a temporary textarea to copy the code to the clipboard
+            const textarea = document.createElement('textarea');
+            textarea.value = codeToCopy;
+            document.body.appendChild(textarea);
+            textarea.select();
+            // Copy the text to the clipboard
+            document.execCommand('copy');
+            // Remove the temporary textarea
+            document.body.removeChild(textarea);
+            // Show a message or update the button text to indicate successful copy
+            alert('Code copied to clipboard! Please remember the code!');
+        }
+
+        function shuffleArray(array) {
+            for (var i = array.length - 1; i > 0; i--) {
+                var j = Math.floor(Math.random() * (i + 1));
+                var temp = array[i];
+                array[i] = array[j];
+                array[j] = temp;
+            }
+        }
+        // Function to generate a random value between 1 and 4 (inclusive)
+        function getRandomValue() {
+            return Math.floor(Math.random() * 4) + 1;
+        }
+
+        function showRandomButton() {
+            // Generate random values for x and y
+            var x = getRandomValue();
+            var y = getRandomValue();
+            var values = [1, 2, 3, 4, x, y];
+            // Shuffle the values array to randomize the order
+            shuffleArray(values);
+            // Create an array to store the assigned values for each group
+            var assignedValues = [];
+            // Loop to assign a value to each group in the order they appear
+            for (var groupIndex = 0; groupIndex < 6; groupIndex++) {
+                if (values.length > 0) {
+                    assignedValues.push(values.pop());
+                } else {
+                    break; // If all values are assigned, exit the loop early
+                }
+            }
+            console.log(assignedValues);
+            var groups = document.getElementsByClassName('btnGroup');
+            for (var i = 0; i < groups.length; i++) {
+                var buttons = groups[i].querySelectorAll('button');
+                var randomIndex = assignedValues[i] - 1;
+                for (var j = 0; j < buttons.length; j++) {
+                    buttons[j].style.display = 'none';
+                }
+                buttons[randomIndex].style.display = 'block';
+            }
+        }
+        showRandomButton();
+
+        function shuffleGroups() {
+            var groupsContainer = document.getElementById('btnGroups');
+            var groups = groupsContainer.querySelectorAll('.btnGroup');
+            var groupArray = Array.from(groups);
+            shuffleArray(groupArray);
+            for (var i = 0; i < groupArray.length; i++) {
+                groupsContainer.appendChild(groupArray[i]);
+            }
+        }
+        shuffleGroups();
+        
+        window.addEventListener('beforeunload', function (e) {
+            e.preventDefault();
+            e.returnValue = '';
+            const warningMessage = 'Please do not close the current window until you finish the whole user study';
+            e.returnValue = warningMessage;
+            return warningMessage;
+        });
+    </script>
+
 </body>
+
 </html>
