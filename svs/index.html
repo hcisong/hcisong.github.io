@@ -42,12 +42,47 @@
         .btnGroup {
             margin-top: 10px;
             text-align: center;
-            float: left;
+            /* float: left; */
+        }
 
-            button {
-                width: 100%;
+        .customBtn {
+            /* width: 100%; */
+        
+            font-weight: 300;
+            line-height: 35px;
+            background-color: white;
+            color: #1d1d1b !important;
+
+            border: 1px solid #1d1d1b;
+            border-radius: 0;
+            margin-top: 5px;
+                
+            &:hover {
+                color: white !important;
+                background-color: #1d1d1b;
+                text-decoration: none;
             }
         }
+
+        .customBtn a {
+            color: black;
+            text-decoration: none;
+            width: 100%;
+
+            &:hover {
+                color: white !important;
+                background-color: #1d1d1b;
+                text-decoration: none;
+            }
+        }
+
+        .customBtn:hover a {
+            color: white !important;
+            background-color: #1d1d1b;
+            text-decoration: none;
+        }
+
+        
 
         .contentBtn {
             font-weight: 300;
@@ -85,8 +120,24 @@
 
         #infoMsg {
             display: none;
+            /* margin-top: 5px;
+            margin-bottom: 10px; */
+            /* text-align: left; */
+        }
+
+        .afterClick {
+            color: rgba(153, 156, 156, 0.836);
+        }
+
+        .stepInfo {
+            font-style: italic;
+            text-align: left;
             margin-top: 20px;
             margin-bottom: 20px;
+        }
+
+        .btn {
+            margin: 5px;
         }
 
     </style>
@@ -109,6 +160,9 @@
             </div>
         </div>
         <div class="row">
+            <p class="col-8 offset-2 stepInfo">STEP 1</p>
+        </div>
+        <div class="row">
             <div class="col-4 offset-4">
 
                 <p id="hintInfo">Please press the button to generate your ID.</p>
@@ -123,14 +177,12 @@
                 </div>
             </div>
         </div>
-
-        <div class="row" id="infoMsg">
-            <p>
-                Please copy your ID and fill in the demographic questionnaire first. <br>
-                After you finish the questionnaire, please press the button below to start the user study.
+        <div class="row">
+            <p class="col-2 offset-2 stepInfo">STEP 2</p>
+            <p id="infoMsg">
+                Please copy your ID and fill in the demographic questionnaire. 
             </p>
         </div>
-        
         <div class="row" id="demoForm">
             <iframe width="640px" height="480px" src="https://forms.office.com/Pages/ResponsePage.aspx?id=m1hzOUCetU6ADrC2OD0WIdsgzKp46jZItHHcee2MmZFURTEwOVpOMkFCTFNMWjZNMDRORlBUWFVKQS4u&embed=true" frameborder="0" marginwidth="0" marginheight="0" style="border: none; max-width:100%; max-height:100vh" allowfullscreen webkitallowfullscreen mozallowfullscreen msallowfullscreen> </iframe>
         </div>
@@ -141,107 +193,128 @@
 
             </div>
         </div>
-
         <div class="row">
             <div class="col-8 offset-2" id="btnGroups">
-                <div class="col-2 btnGroup">
-                    <button type="button" class="btn btn-light">
-                        <a href="./model-lamp-1.html" target="_blank">lamp1</a>
+                <div class="btnGroup">
+                    <p>
+                        Please press the button and jump to VR to observe the <b>Lamp</b> model and fill in the questionnaire afterwards. 
+                    </p>
+                    <button type="button" class="col-2 customBtn">
+                        <a href="./model-lamp-1.html" target="_blank">Lamp 1</a>
                     </button>
-                    <button type="button" class=" btn btn-light">
-                        <a href="./model-lamp-2.html" target="_blank">lamp2</a>
+                    <button type="button" class="col-2  customBtn">
+                        <a href="./model-lamp-2.html" target="_blank">Lamp 2</a>
                     </button>
-                    <button type="button" class="btn btn-light">
-                        <a href="./model-lamp-3.html" target="_blank">lamp3</a>
+                    <button type="button" class="col-2 customBtn">
+                        <a href="./model-lamp-3.html" target="_blank">Lamp 3</a>
                     </button>
-                    <button type="button" class="btn btn-light" target="_blank">
-                        <a href="./model-lamp-4.html" target="_blank">lamp4</a>
-                    </button>
-                </div>
-                <div class="col-2 btnGroup">
-                    <button type="button" class="btn btn-light">
-                        <a href="./model-button-1.html" target="_blank">button1</a>
-                    </button>
-                    <button type="button" class="btn btn-light">
-                        <a href="./model-button-2.html" target="_blank">button2</a>
-                    </button>
-                    <button type="button" class="btn btn-light">
-                        <a href="./model-button-3.html" target="_blank">button3</a>
-                    </button>
-                    <button type="button" class="btn btn-light">
-                        <a href="./model-button-4.html" target="_blank">button4</a>
+                    <button type="button" class="col-2 customBtn" target="_blank">
+                        <a href="./model-lamp-4.html" target="_blank">Lamp 4</a>
                     </button>
                 </div>
-                <div class="col-2 btnGroup">
-                    <button type="button" class="btn btn-light">
-                        <a href="./model-bottle-1.html" target="_blank">bottle1</a>
+                <div class="btnGroup">
+                    <p>
+                        Please press the button and jump to VR to observe the <b>Button</b> model and fill in the questionnaire afterwards. 
+                    </p>
+                    <button type="button" class="col-2 customBtn">
+                        <a href="./model-button-1.html" target="_blank">Button 1</a>
                     </button>
-                    <button type="button" class="btn btn-light">
-                        <a href="./model-bottle-2.html" target="_blank">bottle2</a>
+                    <button type="button" class="col-2 customBtn">
+                        <a href="./model-button-2.html" target="_blank">Button 2</a>
                     </button>
-                    <button type="button" class="btn btn-light">
-                        <a href="./model-bottle-3.html" target="_blank">bottle3</a>
+                    <button type="button" class="col-2 customBtn">
+                        <a href="./model-button-3.html" target="_blank">Button 3</a>
                     </button>
-                    <button type="button" class="btn btn-light">
-                        <a href="./model-bottle-4.html" target="_blank">bottle4</a>
-                    </button>
-                </div>
-                <div class="col-2 btnGroup">
-                    <button type="button" class="btn btn-light">
-                        <a href="./model-mic-1.html" target="_blank">mic1</a>
-                    </button>
-                    <button type="button" class="btn btn-light">
-                        <a href="./model-mic-2.html" target="_blank">mic2</a>
-                    </button>
-                    <button type="button" class="btn btn-light">
-                        <a href="./model-mic-3.html" target="_blank">mic3</a>
-                    </button>
-                    <button type="button" class="btn btn-light">
-                        <a href="./model-mic-4.html" target="_blank">mic4</a>
+                    <button type="button" class="col-2 customBtn">
+                        <a href="./model-button-4.html" target="_blank">Button 4</a>
                     </button>
                 </div>
-                <div class="col-2 btnGroup">
-                    <button type="button" class="btn btn-light">
-                        <a href="./model-switch-1.html" target="_blank">switch1</a>
+                <div class="btnGroup">
+                    <p>
+                        Please press the button and jump to VR to observe the <b>Bottle</b> model and fill in the questionnaire afterwards. 
+                    </p>
+                    <button type="button" class="col-2 customBtn">
+                        <a href="./model-bottle-1.html" target="_blank">Bottle 1</a>
                     </button>
-                    <button type="button" class="btn btn-light">
-                        <a href="./model-switch-2.html" target="_blank">switch2</a>
+                    <button type="button" class="col-2 customBtn">
+                        <a href="./model-bottle-2.html" target="_blank">Bottle 2</a>
                     </button>
-                    <button type="button" class="btn btn-light">
-                        <a href="./model-switch-3.html" target="_blank">switch3</a>
+                    <button type="button" class="col-2 customBtn">
+                        <a href="./model-bottle-3.html" target="_blank">Bottle 3</a>
                     </button>
-                    <button type="button" class="btn btn-light">
-                        <a href="./model-switch-4.html" target="_blank">switch4</a>
+                    <button type="button" class="col-2 customBtn">
+                        <a href="./model-bottle-4.html" target="_blank">Bottle 4</a>
                     </button>
                 </div>
-                <div class="col-2 btnGroup">
-                    <button type="button" class="btn btn-light">
+                <div class="btnGroup">
+                    <p>
+                        Please press the button and jump to VR to observe the <b>Microwave</b> model and fill in the questionnaire afterwards. 
+                    </p>
+                    <button type="button" class="col-2 customBtn">
+                        <a href="./model-mic-1.html" target="_blank">Microwave 1</a>
+                    </button>
+                    <button type="button" class="col-2 customBtn">
+                        <a href="./model-mic-2.html" target="_blank">Microwave 2</a>
+                    </button>
+                    <button type="button" class="col-2 customBtn">
+                        <a href="./model-mic-3.html" target="_blank">Microwave 3</a>
+                    </button>
+                    <button type="button" class="col-2 customBtn">
+                        <a href="./model-mic-4.html" target="_blank">Microwave 4</a>
+                    </button>
+                </div>
+                <div class="btnGroup">
+                    <p>
+                        Please press the button and jump to VR to observe the <b>Light Switch</b> model and fill in the questionnaire afterwards. 
+                    </p>
+                    <button type="button" class="col-2 customBtn">
+                        <a href="./model-switch-1.html" target="_blank">Light Switch 1</a>
+                    </button>
+                    <button type="button" class="col-2 customBtn">
+                        <a href="./model-switch-2.html" target="_blank">Light Switch 2</a>
+                    </button>
+                    <button type="button" class="col-2 customBtn">
+                        <a href="./model-switch-3.html" target="_blank">Light Switch 3</a>
+                    </button>
+                    <button type="button" class="col-2 customBtn">
+                        <a href="./model-switch-4.html" target="_blank">Light Switch 4</a>
+                    </button>
+                </div>
+                <div class="btnGroup">
+                    <p>
+                        Please press the button and jump to VR to observe the <b>Joy-Con</b> model and fill in the questionnaire afterwards. 
+                    </p>
+                    <button type="button" class="col-2 customBtn">
+                        <a href="./model-joycon-1.html" target="_blank">Joy-Con 1</a>
+                    </button>
+                    <button type="button" class="col-2 customBtn">
+                        <a href="./model-joycon-2.html" target="_blank">Joy-Con 2</a>
+                    </button>
+                    <button type="button" class="col-2 customBtn">
 
-                        <a href="./model-joycon-1.html" target="_blank">joycon1</a>
+                        <a href="./model-joycon-3.html" target="_blank">Joy-Con 3</a>
                     </button>
-                    <button type="button" class="btn btn-light">
-                        <a href="./model-joycon-2.html" target="_blank">joycon2</a>
-                    </button>
-                    <button type="button" class="btn btn-light">
+                    <button type="button" class="col-2 customBtn">
 
-                        <a href="./model-joycon-3.html" target="_blank">joycon3</a>
-                    </button>
-                    <button type="button" class="btn btn-light">
-
-                        <a href="./model-joycon-4.html" target="_blank">joycon4</a>
+                        <a href="./model-joycon-4.html" target="_blank">Joy-Con 4</a>
                     </button>
                 </div>
                 <!-- </div> -->
 
             </div>
-            <div class="row btn-row">
+            <!-- <div class="row btn-row">
                 <div class="col-8 offset-2">
                 
-                    <button type="button" class="col-2 btn btn-light">
+                    <button type="button" class="col-2 customBtn">
                         <a href="./questionnaire.html" target="_blank">questionnaire</a>
                     </button>
 
                 </div>
+            </div> -->
+            <div class="row">
+                <p>
+                    Thank you for particiapnting this user study. 
+                </p>
             </div>
             
 
@@ -273,14 +346,19 @@
             document.getElementById('infoMsg').style.display = 'inline';
         }
 
+        const btnGroupsBlock = document.getElementById('btnGroups');
+        const demoForm = document.getElementById('demoForm');
+        const finishDemoButton = document.getElementById('finishDemoButton');
+        const infoMsg = document.getElementById('infoMsg');
+
+
         function handleFinishDemoClick(){
-            const btnGroupsBlock = document.getElementById('btnGroups');
-            const demoForm = document.getElementById('demoForm');
-            const finishDemoButton = document.getElementById('finishDemoButton');
+            
             finishDemoButton.style.display = 'none';
             demoForm.style.display = 'none';
             btnGroupsBlock.style.display = 'block';
-            document.getElementById('infoMsg').textContent = "Please click the button and observe the model in VR to start the user study.";
+            infoMsg.style.color = 'rgba(153, 156, 156, 0.836)';
+            //infoMsg.textContent = "Please click the button and observe the model in VR to start the user study.";
         }
 
         function handleCopyClick() {
@@ -337,9 +415,10 @@
                 for (var j = 0; j < buttons.length; j++) {
                     buttons[j].style.display = 'none';
                 }
-                buttons[randomIndex].style.display = 'block';
+                buttons[randomIndex].style.display = 'inline';
             }
         }
+
         showRandomButton();
 
         function shuffleGroups() {
@@ -348,11 +427,31 @@
             var groupArray = Array.from(groups);
             shuffleArray(groupArray);
             for (var i = 0; i < groupArray.length; i++) {
+                var divRow = document.createElement('div');
+                divRow.className = 'row';
+
+                var paragraph = document.createElement('p');
+                paragraph.className = 'stepInfo';
+                paragraph.textContent = 'STEP ' + (i + 3);
+                var newButton = document.createElement('button');
+                newButton.type = 'button';
+                newButton.className = 'col-2 customBtn';
+                newButton.innerHTML = '<a href="./questionnaire.html" target="_blank">questionnaire</a>';
+
+
+                divRow.appendChild(paragraph);
+                groupsContainer.appendChild(divRow);
                 groupsContainer.appendChild(groupArray[i]);
+                groupsContainer.appendChild(newButton);
+
+
             }
         }
+
         shuffleGroups();
+
         
+
         window.addEventListener('beforeunload', function (e) {
             e.preventDefault();
             e.returnValue = '';
