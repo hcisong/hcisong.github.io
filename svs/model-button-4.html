@@ -112,94 +112,68 @@
             
 
 
-            //scene.useRightHandedSystem = true;
-
-            // Enable VR
-            //var vrHelper = scene.createDefaultVRExperience({createDeviceOrientationCamera:false, useXR: true});
-            // vrHelper.enableTeleportation({floorMeshes: [environment.ground]});
-
-
-
-            
-
-
-            const cube = BABYLON.MeshBuilder.CreateBox("cube", { size: 0.2 }, scene);
-            cube.position = new BABYLON.Vector3(0.7, 1, 0.3);
+            const cube = BABYLON.MeshBuilder.CreatePlane("cube", { width: 0.4, height: 0.4 }, scene);
+            cube.position = new BABYLON.Vector3(0.99, 0.55, -0.5);
             cube.name = "nextPageCube";
+            cube.rotation.y = Math.PI / 2;
 
             const cubeMaterial = new BABYLON.StandardMaterial("cubeMaterial", scene);
-            cubeMaterial.diffuseColor = new BABYLON.Color3(1, 0.5, 1); 
+            cubeMaterial.diffuseColor = new BABYLON.Color3(0.61, 0.78, 0.96); 
+            cubeMaterial.alpha = 0.3; 
 
-            cubeMaterial.environmentIntensity = 0;
+            var cubeTexture = BABYLON.GUI.AdvancedDynamicTexture.CreateForMesh(cube);
+            var questionnaireText = new BABYLON.GUI.TextBlock("questionnaireText", "Questionnaire");
+            questionnaireText.color = "black";
+            questionnaireText.fontSize = 165;
+            cubeTexture.addControl(questionnaireText);
 
-            cubeMaterial.metallic = 0;
-            cubeMaterial.roughness = 1;
+            var textFramebox = BABYLON.MeshBuilder.CreateBox("box", { width: 0.45, height: 0.1, depth: 0.005 }, scene);
+            textFramebox.position =new BABYLON.Vector3(1, 0.55, -0.5);
+            textFramebox.rotation.y = Math.PI / 2;
+            textFramebox.material = cubeMaterial;
 
 
             var customShader = new BABYLON.ShaderMaterial("customShader", scene, {
-                vertex: "custom", // Vertex shader code
-                fragment: "custom" // Fragment shader code
+                vertex: "custom", 
+                fragment: "custom" 
                 },
                 {
                 attributes: ["position", "normal", "uv"],
                 uniforms: ["world", "worldView", "worldViewProjection", "view", "projection"]
             });
 
-            cube.material = customShader;
 
-
-            // const cube = BABYLON.MeshBuilder.CreateBox("cube", { size: 0.2 }, scene);
-            //cube.material = cubeMaterial;
-            // var material = new BABYLON.StandardMaterial("cubeMaterial", scene);
-            // material.diffuseColor = new BABYLON.Color3(0.5, 0.5, 0.5);
-            cube.receiveShadows = true;
-
-            cube.material = cubeMaterial;
-
-
-
-
-            shadowGenerator.getShadowMap().renderList.push(cube);
-            cube.receiveShadows = true;
-
+         
+            cube.isVisible = false;
 
             let tableMesh; 
             let lampMesh; 
 
-           
+            var parentMesh = BABYLON.MeshBuilder.CreatePlane("parentMesh", { width: 3, height: 3 }, scene);
 
-            
-            // var tableMeshPromise = new Promise(function(resolve, reject) {
-
-            //     BABYLON.SceneLoader.Append("./lamp/", "lampLFnew.glb", scene, function (tableScene) {
-
-            //     //var table= BABYLON.SceneLoader.Append("./", "table.glb", scene, function (tableScene) {     
-
-            //         tableScene.createDefaultCameraOrLight(true, false, true); 
-            //         tableMesh = tableScene.getMeshByName("lamp-lf");
-            //         tableMesh.position = new BABYLON.Vector3(0.25, 0.75, 0);
-
-                    
-
-            //         resolve(tableMesh);
-            //     });
-
-            // });
-
-            // tableMeshPromise.then(function(tableMesh) {
-            //     tableMesh = tableMesh;
-            //     tableMesh.receiveShadows = true;
-
-            //     // shadowGenerator.getShadowMap().renderList.push(tableMesh);
-            //     // shadowGenerator.addShadowCaster(tableMesh, true);
+            parentMesh.position = new BABYLON.Vector3(1, 0.75, -0.5);
+            parentMesh.rotation.y = Math.PI / 2;
 
 
-            // }).catch(function(error) {
-            //     console.error("An error occurred:", error);
-            // }).then(function() {
-            //     // tableMesh.receiveShadows = true;
-            //     // shadowGenerator.addShadowCaster(tableMesh);
-            // });
+            var advancedTexture = BABYLON.GUI.AdvancedDynamicTexture.CreateForMesh(parentMesh);
+
+            var countdownText = new BABYLON.GUI.TextBlock("countdownText", "Countdown: 10");
+            countdownText.color = "black";
+            countdownText.fontSize = 24;
+            advancedTexture.addControl(countdownText);
+
+            var countdownValue = 60;
+            var countdownInterval = setInterval(updateCountdown, 1000);
+
+            function updateCountdown() {
+                countdownValue--;
+                countdownText.text = "Please observe the object " +"\n" + countdownValue;
+                if (countdownValue <= 0) {
+                    clearInterval(countdownInterval);
+                    countdownText.text = "This object ID is: Button 4. \n Please press the button to continue to the questionnaire.";
+                    cube.isVisible = true;
+                }
+            }
 
 
 
@@ -213,10 +187,10 @@
 
             var buttonMeshPromise = new Promise(function(resolve, reject) {
 
-                BABYLON.SceneLoader.Append("./button/", "button-lf.glb", scene, function (buttonScene) {
+                BABYLON.SceneLoader.Append("./button/", "button-lfc.glb", scene, function (buttonScene) {
 
                     buttonScene.createDefaultCameraOrLight(true, false, true); 
-                    buttonMesh = buttonScene.getMeshByName("button-lf");
+                    buttonMesh = buttonScene.getMeshByName("button-lfc");
                     buttonMesh.position = new BABYLON.Vector3(-0.25, 0.753, 0);
 
                     resolve(buttonMesh);
@@ -254,8 +228,6 @@
             presentCube.position = new BABYLON.Vector3(0, 0.37, 0.25);
 
             const cubeMaterial2 = new BABYLON.StandardMaterial("cubeMaterial", scene);
-            // cubeMaterial2.diffuseColor = new BABYLON.Color3(0.5, 0.5, 0); 
-            // cubeMaterial2.diffuseColor = new BABYLON.Color3(0.9, 0.9, 0.2);
             cubeMaterial2.diffuseColor = BABYLON.Color3.FromHexString("#CCCCB2");
             
 
