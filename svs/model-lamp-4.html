@@ -3,7 +3,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
-        <title>Test GLB</title>
+        <title>SVS</title>
 
         <!-- Babylon.js -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/dat-gui/0.6.2/dat.gui.min.js"></script>
@@ -145,6 +145,8 @@
 
          
             cube.isVisible = false;
+            textFramebox.isVisible = false;
+
 
             let tableMesh; 
             let lampMesh; 
@@ -172,6 +174,8 @@
                     clearInterval(countdownInterval);
                     countdownText.text = "This object ID is: Lamp 4. \n Please press the button to continue to the questionnaire.";
                     cube.isVisible = true;
+                    textFramebox.isVisible = true;
+
                 }
             }
 
