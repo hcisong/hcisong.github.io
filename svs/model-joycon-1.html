@@ -190,50 +190,6 @@
                 }
             }
 
-           
-
-            
-            // var tableMeshPromise = new Promise(function(resolve, reject) {
-
-            //     BABYLON.SceneLoader.Append("./lamp/", "lampLFnew.glb", scene, function (tableScene) {
-
-            //     //var table= BABYLON.SceneLoader.Append("./", "table.glb", scene, function (tableScene) {     
-
-            //         tableScene.createDefaultCameraOrLight(true, false, true); 
-            //         tableMesh = tableScene.getMeshByName("lamp-lf");
-            //         tableMesh.position = new BABYLON.Vector3(0.25, 0.75, 0);
-
-                    
-
-            //         resolve(tableMesh);
-            //     });
-
-            // });
-
-            // tableMeshPromise.then(function(tableMesh) {
-            //     tableMesh = tableMesh;
-            //     tableMesh.receiveShadows = true;
-
-            //     // shadowGenerator.getShadowMap().renderList.push(tableMesh);
-            //     // shadowGenerator.addShadowCaster(tableMesh, true);
-
-
-            // }).catch(function(error) {
-            //     console.error("An error occurred:", error);
-            // }).then(function() {
-            //     // tableMesh.receiveShadows = true;
-            //     // shadowGenerator.addShadowCaster(tableMesh);
-            // });
-
-
-
-        
-
-
-            
-
-            
-
 
             var joyconMeshPromise = new Promise(function(resolve, reject) {
 
@@ -270,8 +226,6 @@
             presentCube.position = new BABYLON.Vector3(0, 0.37, 0.25);
 
             const cubeMaterial2 = new BABYLON.StandardMaterial("cubeMaterial", scene);
-            // cubeMaterial2.diffuseColor = new BABYLON.Color3(0.5, 0.5, 0); 
-            // cubeMaterial2.diffuseColor = new BABYLON.Color3(0.9, 0.9, 0.2);
             cubeMaterial2.diffuseColor = BABYLON.Color3.FromHexString("#CCCCB2");
             
 
@@ -306,8 +260,6 @@
 
             
 
-            // const newMaterial = new BABYLON.StandardMaterial('newMaterial', scene);
-            // newMaterial.diffuseColor = new BABYLON.Color3(1, 0, 0); 
 
             const pointerToKey = new Map();
 
@@ -322,7 +274,6 @@
                                 //camera.exitVR();
                                 window.location.href = "./questionnaire.html"
 
-                                // window.location.href = "https://forms.office.com/e/NL0BJAAEVX "
                             }
 
                             var initialRotation = joyconMesh.rotationQuaternion.clone();
@@ -394,28 +345,6 @@
         
 
 
-        // window.initFunction = async function() {
-              
-        //     var asyncEngineCreation = async function() {
-        //         try {
-        //         return createDefaultEngine();
-        //         } catch(e) {
-        //         console.log("the available createEngine function failed. Creating the default engine instead");
-        //         return createDefaultEngine();
-        //         }
-        //     }
-
-        //     window.engine = await asyncEngineCreation();
-        // if (!engine) throw 'engine should not be null.';
-        //     startRenderLoop(engine, canvas);
-        //     window.scene = createScene();};
-        //     initFunction().then(() => {sceneToRender = scene                    
-        // });
-
-        // // Resize
-        // window.addEventListener("resize", function () {
-        //     engine.resize();
-        // });
     </script>
 </body>
 </html>

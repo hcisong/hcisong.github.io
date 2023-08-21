@@ -64,9 +64,7 @@
             camera.setTarget(BABYLON.Vector3.Zero());
             camera.attachControl(canvas, true);
 
-            //const light = new BABYLON.HemisphericLight("light1", new BABYLON.Vector3(0, -1, 1), scene);
             var dLight  = new BABYLON.DirectionalLight("dLight", new BABYLON.Vector3(0, -10, 0), scene);
-            // dLight.position = new BABYLON.Vector3(1, -1, -30);
 
 
             var ambientLight = new BABYLON.HemisphericLight("ambientLight", new BABYLON.Vector3(0, 15, 0), scene);
@@ -105,22 +103,6 @@
             shadowGenerator.useContactHardeningShadow = true;
             shadowGenerator.contactHardeningLightSizeU = 0.1;
             shadowGenerator.contactHardeningLightSizeV = 0.1;
-
-
-            // var environment = scene.createDefaultEnvironment({ enableGroundShadow: true });
-            // environment.setMainColor(BABYLON.Color3.FromHexString("#74b9ff"));
-            
-
-
-            //scene.useRightHandedSystem = true;
-
-            // Enable VR
-            //var vrHelper = scene.createDefaultVRExperience({createDeviceOrientationCamera:false, useXR: true});
-            // vrHelper.enableTeleportation({floorMeshes: [environment.ground]});
-
-
-
-            
 
 
             const cube = BABYLON.MeshBuilder.CreatePlane("cube", { width: 0.4, height: 0.4 }, scene);
@@ -205,16 +187,6 @@
                 });
             });
 
-            // function getLamp() {
-            //     lampMeshPromise.then(function(lampMesh) {
-            //         // Access the tableMesh variable here
-            //         lampMesh = lampMesh;
-            //         console.log("bottel changed");
-            //     }).catch(function(error) {
-            //         console.error("An error occurred:", error);
-            //     });
-            // }
-
             lampMeshPromise.then(function(lampMesh) {
                 // Access the tableMesh variable here
                 lampMesh = lampMesh;
@@ -236,8 +208,7 @@
             presentCube.position = new BABYLON.Vector3(0, 0.37, 0.25);
 
             const cubeMaterial2 = new BABYLON.StandardMaterial("cubeMaterial", scene);
-            // cubeMaterial2.diffuseColor = new BABYLON.Color3(0.5, 0.5, 0); 
-            // cubeMaterial2.diffuseColor = new BABYLON.Color3(0.9, 0.9, 0.2);
+
             cubeMaterial2.diffuseColor = BABYLON.Color3.FromHexString("#CCCCB2");
             
 
@@ -253,27 +224,12 @@
             presentCube.material = customShader;
 
             presentCube.material = cubeMaterial2;
-          
-            
-
-            // dLight.shadowEnabled = true;
-
-
-            
-
-            
-
+        
 
             function changeMeshPosition(mesh, destination) {
                 mesh.position = destination;
                 console.log("Mesh position changed to:", destination);
             }
-
-
-            
-
-            // const newMaterial = new BABYLON.StandardMaterial('newMaterial', scene);
-            // newMaterial.diffuseColor = new BABYLON.Color3(1, 0, 0); 
 
             const pointerToKey = new Map();
 
@@ -355,32 +311,6 @@
         });
 
 
-        
-        
-
-
-        // window.initFunction = async function() {
-              
-        //     var asyncEngineCreation = async function() {
-        //         try {
-        //         return createDefaultEngine();
-        //         } catch(e) {
-        //         console.log("the available createEngine function failed. Creating the default engine instead");
-        //         return createDefaultEngine();
-        //         }
-        //     }
-
-        //     window.engine = await asyncEngineCreation();
-        // if (!engine) throw 'engine should not be null.';
-        //     startRenderLoop(engine, canvas);
-        //     window.scene = createScene();};
-        //     initFunction().then(() => {sceneToRender = scene                    
-        // });
-
-        // // Resize
-        // window.addEventListener("resize", function () {
-        //     engine.resize();
-        // });
     </script>
 </body>
 </html>

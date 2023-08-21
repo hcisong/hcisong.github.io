@@ -219,8 +219,6 @@
             presentCube.position = new BABYLON.Vector3(0, 0.37, 0.25);
 
             const cubeMaterial2 = new BABYLON.StandardMaterial("cubeMaterial", scene);
-            // cubeMaterial2.diffuseColor = new BABYLON.Color3(0.5, 0.5, 0); 
-            // cubeMaterial2.diffuseColor = new BABYLON.Color3(0.9, 0.9, 0.2);
             cubeMaterial2.diffuseColor = BABYLON.Color3.FromHexString("#CCCCB2");
             
 
@@ -253,11 +251,6 @@
             }
 
 
-            
-
-            // const newMaterial = new BABYLON.StandardMaterial('newMaterial', scene);
-            // newMaterial.diffuseColor = new BABYLON.Color3(1, 0, 0); 
-
             const pointerToKey = new Map();
 
             scene.onPointerObservable.add((pointerInfo) => {
@@ -271,17 +264,7 @@
                                 //camera.exitVR();
                                 window.location.href = "./questionnaire.html"
 
-                                // window.location.href = "https://forms.office.com/e/NL0BJAAEVX "
                             }
-
-
-                            // var initialRotation = switchMesh.rotationQuaternion.clone();
-
-                            // if(pickedMesh.name === "switch") {
-                            //     //pickedMesh.position.y -= 0.5; // Move the key downward
-                            //     let additionalRotation = BABYLON.Quaternion.RotationAxis(new BABYLON.Vector3(0, 1, 0), -Math.PI / 4);
-                            //     switchMesh.rotationQuaternion = initialRotation.clone().multiply(additionalRotation);
-                            // }
                             
                         }
                         break;
@@ -337,33 +320,6 @@
             engine.resize();
         });
 
-
-        
-        
-
-
-        // window.initFunction = async function() {
-              
-        //     var asyncEngineCreation = async function() {
-        //         try {
-        //         return createDefaultEngine();
-        //         } catch(e) {
-        //         console.log("the available createEngine function failed. Creating the default engine instead");
-        //         return createDefaultEngine();
-        //         }
-        //     }
-
-        //     window.engine = await asyncEngineCreation();
-        // if (!engine) throw 'engine should not be null.';
-        //     startRenderLoop(engine, canvas);
-        //     window.scene = createScene();};
-        //     initFunction().then(() => {sceneToRender = scene                    
-        // });
-
-        // // Resize
-        // window.addEventListener("resize", function () {
-        //     engine.resize();
-        // });
     </script>
 </body>
 </html>

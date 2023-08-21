@@ -64,7 +64,6 @@
             camera.setTarget(BABYLON.Vector3.Zero());
             camera.attachControl(canvas, true);
 
-            //const light = new BABYLON.HemisphericLight("light1", new BABYLON.Vector3(0, -1, 1), scene);
             var dLight  = new BABYLON.DirectionalLight("dLight", new BABYLON.Vector3(0, -10, 0), scene);
             // dLight.position = new BABYLON.Vector3(1, -1, -30);
 
@@ -188,7 +187,6 @@
 
           
             lampMeshPromise.then(function(lampMesh) {
-                // Access the tableMesh variable here
                 lampMesh = lampMesh;
                 lampMesh.name = "lamp";
                 shadowGenerator.addShadowCaster(lampMesh, true);
@@ -208,8 +206,7 @@
             presentCube.position = new BABYLON.Vector3(0, 0.37, 0.25);
 
             const cubeMaterial2 = new BABYLON.StandardMaterial("cubeMaterial", scene);
-            // cubeMaterial2.diffuseColor = new BABYLON.Color3(0.5, 0.5, 0); 
-            // cubeMaterial2.diffuseColor = new BABYLON.Color3(0.9, 0.9, 0.2);
+
             cubeMaterial2.diffuseColor = BABYLON.Color3.FromHexString("#CCCCB2");
             
 
@@ -224,16 +221,7 @@
 
             presentCube.material = customShader;
 
-            presentCube.material = cubeMaterial2;
-          
-            
-
-            // dLight.shadowEnabled = true;
-
-
-            
-
-            
+            presentCube.material = cubeMaterial2;            
 
 
             function changeMeshPosition(mesh, destination) {
@@ -241,11 +229,6 @@
                 console.log("Mesh position changed to:", destination);
             }
 
-
-            
-
-            // const newMaterial = new BABYLON.StandardMaterial('newMaterial', scene);
-            // newMaterial.diffuseColor = new BABYLON.Color3(1, 0, 0); 
 
             const pointerToKey = new Map();
 
@@ -328,31 +311,6 @@
 
 
         
-        
-
-
-        // window.initFunction = async function() {
-              
-        //     var asyncEngineCreation = async function() {
-        //         try {
-        //         return createDefaultEngine();
-        //         } catch(e) {
-        //         console.log("the available createEngine function failed. Creating the default engine instead");
-        //         return createDefaultEngine();
-        //         }
-        //     }
-
-        //     window.engine = await asyncEngineCreation();
-        // if (!engine) throw 'engine should not be null.';
-        //     startRenderLoop(engine, canvas);
-        //     window.scene = createScene();};
-        //     initFunction().then(() => {sceneToRender = scene                    
-        // });
-
-        // // Resize
-        // window.addEventListener("resize", function () {
-        //     engine.resize();
-        // });
     </script>
 </body>
 </html>

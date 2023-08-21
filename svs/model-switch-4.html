@@ -106,23 +106,6 @@
             shadowGenerator.contactHardeningLightSizeU = 0.1;
             shadowGenerator.contactHardeningLightSizeV = 0.1;
 
-
-            // var environment = scene.createDefaultEnvironment({ enableGroundShadow: true });
-            // environment.setMainColor(BABYLON.Color3.FromHexString("#74b9ff"));
-            
-
-
-            //scene.useRightHandedSystem = true;
-
-            // Enable VR
-            //var vrHelper = scene.createDefaultVRExperience({createDeviceOrientationCamera:false, useXR: true});
-            // vrHelper.enableTeleportation({floorMeshes: [environment.ground]});
-
-
-
-            
-
-
             const cube = BABYLON.MeshBuilder.CreatePlane("cube", { width: 0.4, height: 0.4 }, scene);
             cube.position = new BABYLON.Vector3(0.99, 0.55, -0.5);
             cube.name = "nextPageCube";
@@ -241,16 +224,7 @@
 
             presentCube.material = cubeMaterial2;
           
-            
-
-            // dLight.shadowEnabled = true;
-
-
-            
-
-            
-
-
+        
             function changeMeshPosition(mesh, destination) {
                 mesh.position = destination;
                 console.log("Mesh position changed to:", destination);
@@ -274,13 +248,7 @@
                             }
 
 
-                            // var initialRotation = lampMesh.rotationQuaternion.clone();
-
-                            // if(pickedMesh.name === "lamp") {
-                            //     //pickedMesh.position.y -= 0.5; // Move the key downward
-                            //     let additionalRotation = BABYLON.Quaternion.RotationAxis(new BABYLON.Vector3(0, 1, 0), -Math.PI / 4);
-                            //     lampMesh.rotationQuaternion = initialRotation.clone().multiply(additionalRotation);
-                            // }
+                            
                             
                         }
                         break;
@@ -341,28 +309,7 @@
         
 
 
-        // window.initFunction = async function() {
-              
-        //     var asyncEngineCreation = async function() {
-        //         try {
-        //         return createDefaultEngine();
-        //         } catch(e) {
-        //         console.log("the available createEngine function failed. Creating the default engine instead");
-        //         return createDefaultEngine();
-        //         }
-        //     }
-
-        //     window.engine = await asyncEngineCreation();
-        // if (!engine) throw 'engine should not be null.';
-        //     startRenderLoop(engine, canvas);
-        //     window.scene = createScene();};
-        //     initFunction().then(() => {sceneToRender = scene                    
-        // });
-
-        // // Resize
-        // window.addEventListener("resize", function () {
-        //     engine.resize();
-        // });
+        
     </script>
 </body>
 </html>
