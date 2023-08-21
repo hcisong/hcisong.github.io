@@ -167,7 +167,7 @@
 
             function updateCountdown() {
                 countdownValue--;
-                countdownText.text = "Please observe the object " +"\n" + countdownValue;
+                countdownText.text = "Please observe the object for at least one minute." +"\n Countdown: " + countdownValue + " seconds";
                 if (countdownValue <= 0) {
                     clearInterval(countdownInterval);
                     countdownText.text = "This object ID is: Bottle 4. \n Please press the button to continue to the questionnaire.";
