@@ -394,6 +394,6 @@ body p { font-size: 1em; font-weight: 300; }
 
 .edu-work-experience .edu-imgs img, .edu-work-experience .work-imgs img { display: block; margin-left: auto; margin-right: auto; height: 50px; width: auto; margin-bottom: 25px; }
 
-.edu-work-experience .work-imgs img { height: 40px; }
+.edu-work-experience .work-imgs img { height: 40px; margin-left: 18px; margin-right: 18px; }
 
 /*# sourceMappingURL=main.css.map */
