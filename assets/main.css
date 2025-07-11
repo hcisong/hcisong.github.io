@@ -49,9 +49,9 @@ pre { padding: 8px 12px; overflow-x: auto; }
 pre > code { border: 0; padding-right: 0; padding-left: 0; }
 
 /** Wrapper */
-.wrapper { max-width: -webkit-calc(800px - (30px * 2)); max-width: calc(800px - (30px * 2)); margin-right: auto; margin-left: auto; padding-right: 30px; padding-left: 30px; }
+.wrapper { max-width: -webkit-calc(1020px - (30px * 2)); max-width: calc(1020px - (30px * 2)); margin-right: auto; margin-left: auto; padding-right: 30px; padding-left: 30px; }
 
-@media screen and (max-width: 800px) { .wrapper { max-width: -webkit-calc(800px - (30px)); max-width: calc(800px - (30px)); padding-right: 15px; padding-left: 15px; } }
+@media screen and (max-width: 800px) { .wrapper { max-width: -webkit-calc(1020px - (30px)); max-width: calc(1020px - (30px)); padding-right: 15px; padding-left: 15px; } }
 
 /** Clearfix */
 .footer-col-wrapper:after, .wrapper:after { content: ""; display: table; clear: both; }
@@ -307,6 +307,8 @@ body p { font-size: 1em; font-weight: 300; }
 .projectsCollection .project .project-subtitle { font-size: 1em; font-weight: 300; }
 
 .projectsCollection .project .project-subtitle i { font-size: 0.8em; font-weight: 300; }
+
+.projectsCollection .project .project-subtitle .note { font-size: 0.8em; font-weight: 300; font-style: normal; }
 
 .projectsCollection .project .project-desc { font-size: 1em; font-weight: 300; }
 
