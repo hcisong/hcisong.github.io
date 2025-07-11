@@ -278,7 +278,7 @@ body p { font-size: 1em; font-weight: 300; }
 
 @media screen and (max-width: 600px) { .site-nav { width: 100%; } }
 
-.site-header .wrapper { padding: 0 5px; }
+.site-header .wrapper { padding: 0 20px; }
 
 .nav-page { display: float; text-align: right; margin: 20px 0 20px 10px; padding: 5px 20px; color: white !important; background-color: #1d1d1b; border: 1px solid #1d1d1b; }
 
