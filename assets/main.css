@@ -308,7 +308,7 @@ body p { font-size: 1em; font-weight: 300; }
 
 .projectsCollection .project .project-subtitle i { font-size: 0.8em; font-weight: 300; }
 
-.projectsCollection .project .project-subtitle .note { font-size: 0.8em; font-weight: 300; font-style: normal; text-transform: uppercase; color: white; background-color: #1d1d1b; padding: 2px 5px; }
+.projectsCollection .project .project-subtitle .note { font-size: 0.8em; font-weight: 300; font-style: normal; color: white; background-color: #1d1d1b; padding: 2px 5px; }
 
 .projectsCollection .project .project-desc { font-size: 1em; font-weight: 300; }
 
