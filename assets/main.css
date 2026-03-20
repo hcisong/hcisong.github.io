@@ -264,11 +264,11 @@ pre > code { border: 0; padding-right: 0; padding-left: 0; }
 
 body { background: white; font-size: 1.1em; }
 
-body h1 { font-size: 1.8em; }
+body h1 { font-size: 1.7em; }
 
-body h2 { font-size: 1.3em; }
+body h2 { font-size: 1.2em; }
 
-body h3 { font-size: 1.3em; }
+body h3 { font-size: 1em; }
 
 body p { font-size: 1em; font-weight: 300; }
 
@@ -296,13 +296,15 @@ body p { font-size: 1em; font-weight: 300; }
 
 @media (max-width: 480px) { .intro { height: auto; } }
 
+.tag-year { display: block; text-align: left; border-radius: 15px; height: 30px; width: 80px; color: rgba(29, 29, 27, 0.7); text-decoration: underline; }
+
 .projectsCollection { margin-top: 100px; }
 
-.projectsCollection .projects-title { font-size: 1.3em; font-weight: 300; }
+.projectsCollection .projects-title { font-size: 1.2em; font-weight: 300; }
 
 .projectsCollection .project { margin-top: 50px; }
 
-.projectsCollection .project .project-title { font-size: 1.3em; font-weight: 300; }
+.projectsCollection .project .project-title { font-size: 1.2em; font-weight: 300; margin-bottom: 10px; }
 
 .projectsCollection .project .project-subtitle { font-size: 1em; font-weight: 300; }
 
@@ -319,6 +321,10 @@ body p { font-size: 1em; font-weight: 300; }
 .projectsCollection .project .project-desc .card { border: 1px solid #1d1d1b; border-radius: 0; margin-top: 10px; margin-bottom: 10px; }
 
 .projectsCollection .project .project-img img { width: 100%; }
+
+.info-year { margin-top: 40px; }
+
+.info-year + .project { margin-top: 20px; }
 
 .intro-text { font-weight: 300; }
 
@@ -350,13 +356,13 @@ body p { font-size: 1em; font-weight: 300; }
 
 .about { margin-top: 100px; }
 
-.about .about-title { font-size: 1.3em; font-weight: 300; }
+.about .about-title { font-size: 1.2em; font-weight: 300; }
 
 .about .about-desc { margin-top: 50px; font-size: 1em; font-weight: 300; }
 
 .frequencyCat { margin-top: 100px; }
 
-.frequencyCat .fcat-title { font-size: 1.3em; font-weight: 300; }
+.frequencyCat .fcat-title { font-size: 1.2em; font-weight: 300; }
 
 .frequencyCat .fcat-title img { width: 100%; }
 
